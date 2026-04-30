@@ -1,13 +1,12 @@
 import type { FC, HtmlHTMLAttributes } from "react";
+export const MMainScreen: FC<HtmlHTMLAttributes<unknown>> = (
+  props,
+) => {
+  const { ...rest } = props;
 
-interface MMainScreenProps {}
-
-export const MMainScreen: FC<HtmlHTMLAttributes<unknown> & MMainScreenProps> = (props) => {
-	const {...rest} = props
-
-	return (
-		<div {...rest}>
-			<h1>MMainScreen</h1>
-		</div>
-	);
+  return (
+    <div {...rest}>
+      <h1>MMainScreen</h1>
+    </div>
+  );
 };

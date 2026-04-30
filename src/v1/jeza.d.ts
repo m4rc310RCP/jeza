@@ -1,11 +1,11 @@
 export {};
 declare global {
-  interface ILayoutProps{
-		asideProps: {
-			leftWith: number,
-			rigthWith: number,
-			maxLeftWith: number,
-			maxRigthWith: number,
-		}
-	}
+  interface ILayoutProps {
+    asideProps: {
+      leftWith: number;
+      rigthWith: number;
+      maxLeftWith: number;
+      maxRigthWith: number;
+    };
+  }
 }
