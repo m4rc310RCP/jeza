@@ -1,0 +1,28 @@
+---
+name: Deploy to Dokku (DEV)
+on:
+  push:
+    branches:
+      - dokku
+  pull_request:
+    branches:
+      - dokku
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to dokku
+        uses: dokku/github-action@master
+        with:
+          branch: ${{ github.ref_name }}
+          git_remote_url: ssh://dokku@mls.m4rc310.com.br/jeza
+          ssh_private_key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY_MLS }}
