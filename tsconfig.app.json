@@ -20,7 +20,9 @@
 			"@presentation/*": ["./src/v1/@presentation/*"],
 			"@core/*":["./src/v1/@core/*"],
 			"@assets/*":["./src/assets/*"],
-			"@data/*":["./data/*"]
+			"@data/*":["./data/*"],
+			"@jeza/*":["./src/v1/@presentation/*"],
+			"@jeza/core/*":["./src/v1/@core/*"]
 		},
 
     /* Linting */

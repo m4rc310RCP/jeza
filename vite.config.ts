@@ -18,6 +18,8 @@ export default defineConfig({
 			"@core": path.resolve(__dirname, rootPath, `@core`),
 			"@assets": path.resolve(__dirname, srcPath, `assets`),
 			"@data": path.resolve(__dirname, `data`),
+			"@jeza": path.resolve(__dirname, rootPath, `@presentation`),
+			"@jeza/core": path.resolve(__dirname, rootPath, `@core`),
 		}
 	 }
 })

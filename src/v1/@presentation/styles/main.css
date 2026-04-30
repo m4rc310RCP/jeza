@@ -34,6 +34,7 @@ body {
 ========================= */
 @theme {
   /* 🎨 Colors */
+  --color-principal: #ffff;
   --color-main: #132838;
   --color-column: #00c00a;
   --color-task: #242528;

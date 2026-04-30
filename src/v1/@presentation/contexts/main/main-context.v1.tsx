@@ -8,8 +8,9 @@ import {
   useState,
 } from "react";
 
+import { m } from "@presentation/i18n/locale-i18n.v1";
+
 interface IMainValues {
-  title: string;
   changeTitle: (title: string) => void;
 }
 const defaultValue: IMainValues = {} as IMainValues;
@@ -21,8 +22,9 @@ const MainProvider: FC<PropsWithChildren> = ({ children }) => {
   const update = useMemo(() => createUpdateValue(setValue), []);
 
   useEffect(() => {
+    window.document.title = m.app_default_title;
     update("changeTitle", (title: string) => {
-      update("title", title);
+      window.document.title = title ?? m.app_default_title;
     });
   }, [update]);
 
