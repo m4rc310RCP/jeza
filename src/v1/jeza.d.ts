@@ -6,6 +6,8 @@ declare global {
       rigthWith: number;
       maxLeftWith: number;
       maxRigthWith: number;
+			asideLOpen: boolean;
+			asideROpen: boolean;
     };
   }
 }

@@ -14,12 +14,12 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
 	 resolve: {
 		alias: {
+			"@jeza/core": path.resolve(__dirname, rootPath, `@core`),
+			"@jeza": path.resolve(__dirname, rootPath, `@presentation`),
 			"@presentation": path.resolve(__dirname, rootPath, `@presentation`),
 			"@core": path.resolve(__dirname, rootPath, `@core`),
 			"@assets": path.resolve(__dirname, srcPath, `assets`),
-			"@data": path.resolve(__dirname, `data`),
-			"@jeza": path.resolve(__dirname, rootPath, `@presentation`),
-			"@jeza/core": path.resolve(__dirname, rootPath, `@core`),
+			"@data": path.resolve(__dirname, `data`)
 		}
 	 }
 })

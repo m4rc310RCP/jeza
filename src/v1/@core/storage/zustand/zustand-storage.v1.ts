@@ -15,6 +15,8 @@ export const useStoreLocal = create<IStore>()(
         maxLeftWith: 500,
         rigthWith: 500,
         maxRigthWith: 800,
+				asideLOpen: true,
+				asideROpen: true,
       },
       setAsideProps(asideProps) {
         set({ asideProps });
