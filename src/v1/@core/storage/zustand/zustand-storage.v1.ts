@@ -5,6 +5,14 @@ import { persist } from "zustand/middleware";
 interface IStore {
   asideProps: ILayoutProps["asideProps"];
   setAsideProps: (asideProps: ILayoutProps["asideProps"]) => void;
+	tabs: TTab[] ;
+	setTabs: (tabs: TTab[])=> void;
+	activeTab: string;
+	setActiveTab: (activeTab: string) => void;
+	//-------------- //
+	location: ILocation | null;
+	setLocation: (location: ILocation | null) => void;
+	//-------------- //
 }
 
 export const useStoreLocal = create<IStore>()(
@@ -21,6 +29,21 @@ export const useStoreLocal = create<IStore>()(
       setAsideProps(asideProps) {
         set({ asideProps });
       },
+			//-------------------
+			tabs: [],
+			setTabs(tabs) {
+				set({tabs});
+			},
+			activeTab: '1',
+			setActiveTab(activeTab) {
+				set({activeTab});
+			},
+			//-------------------
+			location: null,
+			setLocation(location) {
+				set({ location });
+			},
+			//-------------------
     }),
     {
       name: "default-storage",
