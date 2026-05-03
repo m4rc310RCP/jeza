@@ -7,13 +7,16 @@ import {
   useMemo,
   useState,
 } from "react";
-import { useStoreLocal } from '@jeza/core/storage/zustand/zustand-storage.v1';
+import { useStoreLocal } from "@jeza/core/storage/zustand/zustand-storage.v1";
 
 import { m } from "@presentation/i18n/locale-i18n.v1";
+import { apiMP } from "@jeza/core/services/http/geza/geza-map-service.v1";
 
 interface IMainValues {
   changeTitle: (title: string) => void;
-	location: IAwaitValue<ILocation>;
+  location: IAwaitValue<ILocation>;
+	searchLocal: (local: string) => void;
+	listPlaces: IAwaitValue<IApiRoutes['/api/local']['response']>;
 }
 const defaultValue: IMainValues = {} as IMainValues;
 
@@ -23,28 +26,43 @@ const MainProvider: FC<PropsWithChildren> = ({ children }) => {
   const [value, setValue] = useState<IMainValues>(defaultValue);
   const update = useMemo(() => createUpdateValue(setValue), []);
 
-	const location = useStoreLocal(s => s.location);
-	const store = useStoreLocal.getState();
-
-	useEffect(()=>{
-		if (!location){
-			update('location', {loading: true});
-			navigator.geolocation.getCurrentPosition(pos => {
-				store.setLocation({
-					latitude: pos.coords.latitude,
-					longitude: pos.coords.longitude
-				});
-			});
-			return;
-		}
-		update('location', {loading: false, value: location});
-	}, [location]);
+  const location = useStoreLocal((s) => s.location);
+  const store = useStoreLocal.getState();
 
   useEffect(() => {
+    if (!location) {
+      update("location", { loading: true });
+      store.setLocation({
+        latitude: -24.0233293,
+        longitude: -52.3634782,
+      });
+      // navigator.geolocation.getCurrentPosition(pos => {
+      // 	store.setLocation({
+      // 		// latitude: pos.coords.latitude,
+      // 		// longitude: pos.coords.longitude
+      // 		latitude: -24.0233293,
+      // 		longitude: -52.3634782
+      // 	});
+      // });
+      return;
+    }
+    update("location", { loading: false, value: location });
+  }, [location]);
+
+  useEffect(() => {
+    store.setLocation(null);
     window.document.title = m.app_default_title;
     update("changeTitle", (title: string) => {
       window.document.title = title ?? m.app_default_title;
     });
+
+		update('searchLocal', (local) => {
+			update('listPlaces', { loading: true })
+			apiMP.post('/api/local', {nm_local: local}).then(resp => {
+				update('listPlaces', { loading: false, value: resp })
+			});
+		});
+
   }, [update]);
 
   return <MainContext.Provider value={value}>{children}</MainContext.Provider>;

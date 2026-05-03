@@ -1,17 +1,6 @@
-import {
-  type FC,
-  type HtmlHTMLAttributes,
-  useMemo,
-  useRef,
-} from "react";
+import { type FC, type HtmlHTMLAttributes, useMemo, useRef } from "react";
 
-import {
-  X,
-  Plus,
-  FileCode2,
-  Home,
-  Search,
-} from "lucide-react";
+import { X, Plus, FileCode2, Home, Search } from "lucide-react";
 
 import { MToggleSide } from "@jeza/components";
 import { MMapPart, MPartNone } from "@jeza/containers";
@@ -19,9 +8,9 @@ import { MMapPart, MPartNone } from "@jeza/containers";
 import { GiRadarSweep } from "react-icons/gi";
 import { useStoreLocal } from "@jeza/core/storage/zustand/zustand-storage.v1";
 
-export const MMainScreen: FC<
-  HtmlHTMLAttributes<HTMLDivElement>
-> = ({ ...rest }) => {
+export const MMainScreen: FC<HtmlHTMLAttributes<HTMLDivElement>> = ({
+  ...rest
+}) => {
   const prefs = useStoreLocal((s) => s.asideProps);
   const setSidePrefs = useStoreLocal((s) => s.setAsideProps);
 
@@ -35,14 +24,13 @@ export const MMainScreen: FC<
 
   const currentTab = useMemo(
     () => tabs.find((t) => t.id === activeTab),
-    [tabs, activeTab]
+    [tabs, activeTab],
   );
 
   /* ---------------------------------------- */
   const createTab = () => {
     const id =
-      typeof crypto !== "undefined" &&
-      "randomUUID" in crypto
+      typeof crypto !== "undefined" && "randomUUID" in crypto
         ? crypto.randomUUID()
         : String(Date.now());
 
@@ -59,10 +47,7 @@ export const MMainScreen: FC<
     store.setActiveTab(id);
   };
 
-  const closeTab = (
-    e: React.MouseEvent<HTMLButtonElement>,
-    id: string
-  ) => {
+  const closeTab = (e: React.MouseEvent<HTMLButtonElement>, id: string) => {
     e.stopPropagation();
 
     const tab = tabs.find((t) => t.id === id);
@@ -92,13 +77,9 @@ export const MMainScreen: FC<
   };
 
   /* ---------------------------------------- */
-  const leftWidth = prefs?.asideLOpen
-    ? prefs?.leftWith ?? 220
-    : 5;
+  const leftWidth = prefs?.asideLOpen ? (prefs?.leftWith ?? 220) : 5;
 
-  const rightWidth = prefs?.asideROpen
-    ? prefs?.rigthWith ?? 320
-    : 5;
+  const rightWidth = prefs?.asideROpen ? (prefs?.rigthWith ?? 320) : 5;
 
   /* ====================================================== */
 
@@ -108,7 +89,6 @@ export const MMainScreen: FC<
       className="h-screen w-screen bg-[#1e1e1e] flex flex-col text-white"
     >
       <div className="relative flex flex-1 min-h-0 overflow-hidden">
-
         {/* LEFT */}
         <aside
           className="relative h-full shrink-0 bg-[#252526] border-r border-black/30"
@@ -140,7 +120,7 @@ export const MMainScreen: FC<
 
                 const final = Math.min(
                   Math.max(width, 5),
-                  prefs?.maxLeftWith ?? 500
+                  prefs?.maxLeftWith ?? 500,
                 );
 
                 setSidePrefs({
@@ -158,7 +138,6 @@ export const MMainScreen: FC<
 
         {/* MAIN */}
         <main className="flex flex-col flex-1 min-w-0 min-h-0 overflow-hidden bg-[#1f1f1f]">
-          
           {/* TOP BAR */}
           <div className="h-10 bg-[#252526] border-b flex items-center">
             <div className="px-2 border-r">
@@ -182,9 +161,7 @@ export const MMainScreen: FC<
                       {tab.title}
 
                       {!tab.pinned && (
-                        <button
-                          onClick={(e) => closeTab(e, tab.id)}
-                        >
+                        <button onClick={(e) => closeTab(e, tab.id)}>
                           <X size={13} />
                         </button>
                       )}
@@ -205,10 +182,7 @@ export const MMainScreen: FC<
               const isActive = tab.id === activeTab;
 
               return (
-                <div
-                  key={tab.id}
-                  className={isActive ? "flex-1" : "hidden"}
-                >
+                <div key={tab.id} className={isActive ? "flex-1" : "hidden"}>
                   <TabRenderer tab={tab} isActive={isActive} />
                 </div>
               );
@@ -259,7 +233,7 @@ export const MMainScreen: FC<
 
                     const final = Math.min(
                       Math.max(width, 5),
-                      prefs?.maxRigthWith ?? 700
+                      prefs?.maxRigthWith ?? 700,
                     );
 
                     setSidePrefs({
@@ -291,13 +265,7 @@ export const MMainScreen: FC<
 
 /* ====================================================== */
 
-const TabRenderer = ({
-  tab,
-  isActive,
-}: {
-  tab: TTab;
-  isActive: boolean;
-}) => {
+const TabRenderer = ({ tab, isActive }: { tab: TTab; isActive: boolean }) => {
   switch (tab.view) {
     case "dashboard":
       return <GiRadarSweep className="m-auto text-9xl" />;

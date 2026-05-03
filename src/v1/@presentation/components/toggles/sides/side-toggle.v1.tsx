@@ -40,15 +40,7 @@ export const MToggleSide: FC<
         size={18}
         className={`
           transition-transform
-          ${
-            isLeft
-              ? open
-                ? "rotate-180"
-                : ""
-              : open
-              ? ""
-              : "rotate-180"
-          }
+          ${isLeft ? (open ? "rotate-180" : "") : open ? "" : "rotate-180"}
         `}
       />
     </button>
