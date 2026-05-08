@@ -29,7 +29,7 @@ const MMainProvider: FC<PropsWithChildren> = ({ children }) => {
   useEffect(() => {
     if (!userApp) return;
     update("oc_usuario", { loading: false, value: userApp });
-  }, [userApp]);
+  }, [userApp, update]);
 
   useEffect(() => {
     update("nm_aplicativo", m.text_appname);
@@ -47,7 +47,7 @@ const MMainProvider: FC<PropsWithChildren> = ({ children }) => {
     });
 
 		update("fn_refreshToken", ()=> {
-			apiMP.post('/geza/refresh', {}, "include")
+			apiMP.post('/geza/refresh', undefined, "include")
 				.then(resp => {
 					console.log(resp);
 				})

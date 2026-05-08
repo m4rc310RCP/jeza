@@ -74,7 +74,7 @@ declare global {
 
     "/geza/refresh": IRouteRef<
       "POST",
-			{ },
+			undefined,
       { ds_token: string; tp_token: "Bearer" }
     >;
 
