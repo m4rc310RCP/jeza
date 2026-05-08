@@ -1,4 +1,4 @@
-import { type FC, type HtmlHTMLAttributes, useMemo, useRef } from "react";
+import { type FC, type HtmlHTMLAttributes, useRef } from "react";
 
 import { X, Plus, FileCode2, Home, Search } from "lucide-react";
 
@@ -22,17 +22,17 @@ export const MMainScreen: FC<HtmlHTMLAttributes<HTMLDivElement>> = ({
   const resizingLeft = useRef(false);
   const resizingRight = useRef(false);
 
-  const currentTab = useMemo(
-    () => tabs.find((t) => t.id === activeTab),
-    [tabs, activeTab],
-  );
+  // const currentTab = useMemo(
+  //   () => tabs.find((t) => t.id === activeTab),
+  //   [tabs, activeTab],
+  // );
 
   /* ---------------------------------------- */
   const createTab = () => {
     const id =
       typeof crypto !== "undefined" && "randomUUID" in crypto
         ? crypto.randomUUID()
-        : String(Date.now());
+        : String(Date.toString());
 
     store.setTabs([
       ...tabs,
@@ -86,7 +86,7 @@ export const MMainScreen: FC<HtmlHTMLAttributes<HTMLDivElement>> = ({
   return (
     <div
       {...rest}
-      className="h-screen w-screen bg-[#1e1e1e] flex flex-col text-white"
+      className="h-screen w-screen bg-[#274154] flex flex-col text-white"
     >
       <div className="relative flex flex-1 min-h-0 overflow-hidden">
         {/* LEFT */}

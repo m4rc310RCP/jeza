@@ -1,74 +1,67 @@
-import { useMain } from "@jeza/contexts/hooks/general.v1";
-import {
-  type FC,
-  type HtmlHTMLAttributes,
-  useEffect,
-  useState,
-} from "react";
+import { type FC, type HtmlHTMLAttributes } from "react";
 
-type Suggestion = {
-  id_local: string;
-  nm_local: string;
-};
+// type Suggestion = {
+//   id_local: string;
+//   nm_local: string;
+// };
 
 export const MPlaceAutocomplete: FC<HtmlHTMLAttributes<unknown>> = () => {
-  const [query, setQuery] = useState("");
-  const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
-  const [selected, setSelected] = useState<Suggestion | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  // const [query, setQuery] = useState("");
+  // const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
+  // const [selected, setSelected] = useState<Suggestion | null>(null);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState<string | null>(null);
 
-  const { searchLocal, listPlaces } = useMain();
+  // const { searchLocal, listPlaces } = useMain();
 
-  useEffect(() => {
-    setError(null);
-    setSuggestions([]);
+  // useEffect(() => {
+  //   setError(null);
+  //   setSuggestions([]);
 
-    if (listPlaces?.loading) {
-      setLoading(true);
-      return;
-    }
+  //   if (listPlaces?.loading) {
+  //     setLoading(true);
+  //     return;
+  //   }
 
-    setLoading(false);
+  //   setLoading(false);
 
-    if (listPlaces?.error) {
-      setError(listPlaces.error);
-      return;
-    }
+  //   if (listPlaces?.error) {
+  //     setError(listPlaces.error);
+  //     return;
+  //   }
 
-    setSuggestions(listPlaces?.value || []);
-  }, [listPlaces]);
+  //   setSuggestions(listPlaces?.value || []);
+  // }, [listPlaces]);
 
-  const handleSearch = () => {
-    if (!query.trim()) return;
-    searchLocal(query);
-  };
+  // const handleSearch = () => {
+  //   if (!query.trim()) return;
+  //   searchLocal(query);
+  // };
 
-  const handleSelect = (item: Suggestion) => {
-    setSelected(item);
-    setQuery(item.nm_local);
-    setSuggestions([]);
-  };
+  // const handleSelect = (item: Suggestion) => {
+  //   setSelected(item);
+  //   setQuery(item.nm_local);
+  //   setSuggestions([]);
+  // };
 
-  const handleClear = () => {
-    setSelected(null);
-    setQuery("");
-    setSuggestions([]);
-  };
+  // const handleClear = () => {
+  //   setSelected(null);
+  //   setQuery("");
+  //   setSuggestions([]);
+  // };
 
-	return (
-		<div className="w-96">
-			<form action="" className="">
-				<input type="text" className="p-1" />
-				<button className="">Pesquisar</button>
-			</form>
-		</div>
-	)
-
+  return (
+    <div className="w-96">
+      <form action="" className="">
+        <input type="text" className="p-1" />
+        <button className="">Pesquisar</button>
+      </form>
+    </div>
+  );
 
   // return (
   //   <div style={{ width: 420, position: "relative", fontFamily: "sans-serif" }}>
-      
+
   //     {/* ================== INPUT OU CARD ================== */}
   //     {!selected ? (
   //       <div

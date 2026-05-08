@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+html,
+body {
+  overscroll-behavior-y: none;
+}
+
+:root {
+  font-family:
+    Helvetica Neue,
+    Arial,
+    Helvetica,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.red-ui-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--red-ui-shade-color);
+  z-index: 5;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* =========================
+   DESIGN TOKENS (THEME)
+========================= */
+@theme {
+  /* 🎨 Colors */
+  --color-principal: #ffff;
+  --color-main: #193549;
+  --color-column: #00c00a;
+  --color-task: #242528;
+  --color-tv-yellow: #ffff00;
+  --color-tv-green: #00ff00;
+  --color-tv-red: #ff0000;
+  --color-primary: #2b3033;
+  --color-secundary: #00c00a;
+
+  /* 🔤 Font sizes */
+  --text-xxs: 0.65rem;
+  --text-xxs--line-height: 0.7rem;
+
+  --text-tv: 1.7rem;
+  --text-tv--line-height: 2.5rem;
+
+  /* 📐 Breakpoints */
+  --breakpoint-tablet: 500px;
+  --breakpoint-laptop: 700px;
+  --breakpoint-tv: 1280px;
+  --breakpoint-tv-full-hd: 3840px;
+
+  /* 🎞️ Animations */
+  --animate-spin-fast: spin 0.5s linear infinite;
+  --animate-spin-medium: spin 1s linear infinite;
+  --animate-spin-slow: spin 2s linear infinite;
+}
+@utility w-col {
+  width: 28ch;
+}

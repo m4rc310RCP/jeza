@@ -19,10 +19,9 @@
 		"paths": {
 			"@jeza/core/*":["./src/v1/@core/*"],
 			"@jeza/*":["./src/v1/@presentation/*"],
-			"@presentation/*": ["./src/v1/@presentation/*"],
-			"@core/*":["./src/v1/@core/*"],
-			"@assets/*":["./src/assets/*"],
-			"@data/*":["./data/*"]
+			"@jeza-v2/core/*":["./src/v2/@core/*"],
+			"@jeza-v2/presentation/*":["./src/v2/@presentation/*"],
+			"@jeza-v2/*":["./src/v2/*"],
 		},
 
     /* Linting */
