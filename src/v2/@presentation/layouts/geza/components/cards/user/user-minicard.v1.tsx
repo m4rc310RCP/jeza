@@ -5,9 +5,7 @@ import { AiFillCloseSquare } from "react-icons/ai";
 import type { FC, HtmlHTMLAttributes } from "react";
 import { useMAuth } from "@jeza-v2/presentation/contexts";
 
-export const MUserMinicard: FC<
-  HtmlHTMLAttributes<unknown>
-> = (props) => {
+export const MUserMinicard: FC<HtmlHTMLAttributes<unknown>> = (props) => {
   const user = useLayoutStore((s) => s.user);
   const { fn_logout } = useMAuth();
 

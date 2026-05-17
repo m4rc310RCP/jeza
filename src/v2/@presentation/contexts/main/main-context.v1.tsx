@@ -7,9 +7,7 @@ import {
   useState,
 } from "react";
 import { createUpdateValue, m } from "@jeza-v2/core/index";
-import {
-  useStoreLocal,
-} from "@jeza-v2/core/data/zustand/zustand-storage.v1";
+import { useStoreLocal } from "@jeza-v2/core/data/zustand/zustand-storage.v1";
 
 interface IMMainValues {
   nr_versao: string;

@@ -3,9 +3,7 @@ import { MLogoGeza } from "@jeza-v2/presentation/layouts";
 import { useLayoutStore } from "@jeza-v2/core/data/zustand/zustand-storage.v1";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-export const MSplasScreenStartup: FC<
-  HtmlHTMLAttributes<unknown>
-> = (props) => {
+export const MSplasScreenStartup: FC<HtmlHTMLAttributes<unknown>> = (props) => {
   const { ...rest } = props;
 
   const startup = useLayoutStore((s) => s?.screenData?.startup);

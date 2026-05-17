@@ -298,13 +298,10 @@ const MAuthProvider: FC<PropsWithChildren> = ({ children }) => {
   // --------------------------------------------------------
 
   const handleRefresh = useCallback(async () => {
-    console.log(`handleRefresh`);
     const newToken = await refreshToken();
-
     if (!newToken) {
       return;
     }
-
     await fetchUser();
   }, [refreshToken, fetchUser]);
 
@@ -314,9 +311,7 @@ const MAuthProvider: FC<PropsWithChildren> = ({ children }) => {
 
   usePersistentScheduler({
     enabled: !!nextRefreshDate,
-
     nextDate: nextRefreshDate,
-
     async onRun() {
       await handleRefresh();
     },
@@ -327,20 +322,33 @@ const MAuthProvider: FC<PropsWithChildren> = ({ children }) => {
   // --------------------------------------------------------
 
   useEffect(() => {
-		let mounted = true;
+		// eslint-disable-next-line react-hooks/set-state-in-effect
+		validateSession();
+  }, [validateSession]);
 
-		const run = async () => {
-			if (!mounted) return;
+  // useEffect(() => {
+  //   let mounted = true;
 
-			await validateSession();
-		};
+  //   const bootstrap = async () => {
+  //     await Promise.resolve();
 
-		run();
+  //     if (!mounted) return;
 
-		return () => {
-			mounted = false;
-		};
-	}, [validateSession]);
+  //     const validToken = await validateSession();
+
+  //     if (!mounted || !validToken) {
+  //       return;
+  //     }
+
+  //     await fetchUser();
+  //   };
+
+  //   void bootstrap();
+
+  //   return () => {
+  //     mounted = false;
+  //   };
+  // }, [validateSession, fetchUser]);
 
   // --------------------------------------------------------
   // Context Functions
@@ -348,9 +356,7 @@ const MAuthProvider: FC<PropsWithChildren> = ({ children }) => {
 
   useEffect(() => {
     update("fn_login", login);
-
     update("fn_logout", logout);
-
     update("fn_refresh", handleRefresh);
   }, [login, logout, handleRefresh, update]);
 

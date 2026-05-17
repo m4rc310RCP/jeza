@@ -1,19 +1,8 @@
 import { useMAuth } from "@jeza-v2/presentation/contexts";
 
-import {
-  useMemo,
-  useRef,
-  useState,
-  type FC,
-  type HTMLAttributes,
-} from "react";
+import { useMemo, useRef, useState, type FC, type HTMLAttributes } from "react";
 
-import {
-  Building2,
-  Eye,
-  EyeOff,
-  UserRound,
-} from "lucide-react";
+import { Building2, Eye, EyeOff, UserRound } from "lucide-react";
 
 import { IoKeyOutline } from "react-icons/io5";
 
@@ -28,9 +17,7 @@ import { MLogoGeza } from "@jeza-v2/presentation/layouts";
 
 import { useLayoutStore } from "@jeza-v2/core/data/zustand/zustand-storage.v1";
 
-export const MContainerSignin: FC<
-  HTMLAttributes<HTMLDivElement>
-> = () => {
+export const MContainerSignin: FC<HTMLAttributes<HTMLDivElement>> = () => {
   return (
     <div
       className="
@@ -50,21 +37,16 @@ export const MContainerSignin: FC<
   );
 };
 
-export const MDivSignIn: FC<
-  HTMLAttributes<HTMLFormElement>
-> = (props) => {
+export const MDivSignIn: FC<HTMLAttributes<HTMLFormElement>> = (props) => {
   const {
     fn_login: handleSignIn,
     oc_autenticado: mauth,
     nr_cpfcnpj,
   } = useMAuth();
 
-  const cpfCnpj = useLayoutStore(
-    (s) => s.cpfCnpj,
-  );
+  const cpfCnpj = useLayoutStore((s) => s.cpfCnpj);
 
-  const passwordRef =
-    useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
 
   // ========================================================
   // STATE
@@ -72,13 +54,9 @@ export const MDivSignIn: FC<
 
   const [auth, setAuth] = useState<IUserAuth>({
     nr_cpfcnpj: nr_cpfcnpj
-      ? formatDocument(
-          sanitizeDocument(nr_cpfcnpj),
-        )
+      ? formatDocument(sanitizeDocument(nr_cpfcnpj))
       : cpfCnpj
-        ? formatDocument(
-            sanitizeDocument(cpfCnpj),
-          )
+        ? formatDocument(sanitizeDocument(cpfCnpj))
         : "",
 
     vl_senha: "",
@@ -108,18 +86,14 @@ export const MDivSignIn: FC<
   // INPUT HANDLERS
   // ========================================================
 
-  const handleDocumentChange = (
-    value: string,
-  ) => {
+  const handleDocumentChange = (value: string) => {
     let cleaned = sanitizeDocument(value);
 
     cleaned = cleaned.slice(0, 14);
 
-    const formatted =
-      formatDocument(cleaned);
+    const formatted = formatDocument(cleaned);
 
-    const isValid =
-      isValidDocument(cleaned);
+    const isValid = isValidDocument(cleaned);
 
     setAuth((prev) => ({
       ...prev,
@@ -134,9 +108,7 @@ export const MDivSignIn: FC<
     }
   };
 
-  const handlePasswordChange = (
-    value: string,
-  ) => {
+  const handlePasswordChange = (value: string) => {
     const pwd = value.slice(0, 12);
 
     setAuth((prev) => ({
@@ -172,9 +144,7 @@ export const MDivSignIn: FC<
   // SUBMIT
   // ========================================================
 
-  const handleSubmit = (
-    e: React.FormEvent<HTMLFormElement>,
-  ) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     handleSignIn({
@@ -188,11 +158,7 @@ export const MDivSignIn: FC<
   // ========================================================
 
   return (
-    <form
-      className="flex flex-col gap-2"
-      {...props}
-      onSubmit={handleSubmit}
-    >
+    <form className="flex flex-col gap-2" {...props} onSubmit={handleSubmit}>
       <MLogoGeza className="my-6" />
 
       {/* DOCUMENTO */}
@@ -218,11 +184,7 @@ export const MDivSignIn: FC<
           disabled={mauth?.loading}
           value={auth.nr_cpfcnpj}
           placeholder="000.000.000-00"
-          onChange={(e) =>
-            handleDocumentChange(
-              e.target.value,
-            )
-          }
+          onChange={(e) => handleDocumentChange(e.target.value)}
           className={`
             w-full
             h-full
@@ -265,23 +227,12 @@ export const MDivSignIn: FC<
 
         <input
           ref={passwordRef}
-          type={
-            auth.in_versenha
-              ? "text"
-              : "password"
-          }
+          type={auth.in_versenha ? "text" : "password"}
           name="password"
           autoComplete="current-password"
-          disabled={
-            mauth?.loading ||
-            !isDocumentValidate
-          }
+          disabled={mauth?.loading || !isDocumentValidate}
           value={auth.vl_senha}
-          onChange={(e) =>
-            handlePasswordChange(
-              e.target.value,
-            )
-          }
+          onChange={(e) => handlePasswordChange(e.target.value)}
           className="
             w-full
             h-full
@@ -314,15 +265,11 @@ export const MDivSignIn: FC<
 
         <button
           type="button"
-          disabled={
-            mauth?.loading ||
-            !isDocumentValidate
-          }
+          disabled={mauth?.loading || !isDocumentValidate}
           onClick={() => {
             setAuth((prev) => ({
               ...prev,
-              in_versenha:
-                !prev.in_versenha,
+              in_versenha: !prev.in_versenha,
             }));
           }}
           className="
@@ -352,20 +299,14 @@ export const MDivSignIn: FC<
         <input
           type="checkbox"
           checked={auth.in_gravar}
-          disabled={
-            mauth?.loading ||
-            !isDocumentValidate ||
-            !auth.vl_senha
-          }
+          disabled={mauth?.loading || !isDocumentValidate || !auth.vl_senha}
           onChange={(e) => {
             setAuth((prev) => ({
               ...prev,
-              in_gravar:
-                e.target.checked,
+              in_gravar: e.target.checked,
             }));
           }}
         />
-
         Lembrar os dados
       </label>
 
@@ -390,28 +331,23 @@ export const MDivSignIn: FC<
           </p>
         )}
 
-        {!mauth?.loading &&
-          mauth?.error && (
-            <p
-              className="
+        {!mauth?.loading && mauth?.error && (
+          <p
+            className="
                 text-xs
                 text-red-400
                 mx-auto
               "
-            >
-              {mauth?.error}
-            </p>
-          )}
+          >
+            {mauth?.error}
+          </p>
+        )}
       </div>
 
       {/* BUTTON */}
       <button
         type="submit"
-        disabled={
-          mauth?.loading ||
-          !isDocumentValidate ||
-          !auth.vl_senha
-        }
+        disabled={mauth?.loading || !isDocumentValidate || !auth.vl_senha}
         className="
           h-10
 
