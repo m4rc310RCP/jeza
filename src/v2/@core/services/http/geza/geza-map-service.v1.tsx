@@ -1,3 +1,4 @@
-import { TypedFetch } from "../typed-fetch.v1";
+import { TypedFetch } from "../typed-fetch.v2";
 
-export const apiMP = new TypedFetch("https://node-red.mls.m4rc310.com.br");
+const BASE_URL = "https://node-red.mls.m4rc310.com.br";
+export const apiMP = new TypedFetch(BASE_URL);

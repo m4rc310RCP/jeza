@@ -1,8 +1,16 @@
 export class TypedFetch {
   private baseURL: string;
+  private getToken?: () => string | null;
+  private refreshToken?: () => Promise<void>;
 
-  constructor(baseURL: string) {
+  constructor(
+    baseURL: string,
+    getToken?: () => string | null,
+    refreshToken?: () => Promise<void>,
+  ) {
     this.baseURL = baseURL;
+    this.getToken = getToken;
+    this.refreshToken = refreshToken;
   }
 
   private async parseJson(res: Response) {
@@ -13,55 +21,47 @@ export class TypedFetch {
     }
   }
 
-  async get<K extends KeysByMethod<"GET">>(
-    route: K,
-    params: RequestOf<K>,
+  private createHeaders() {
+    const token = this.getToken?.();
 
-  ): Promise<ResponseOf<K>> {
-    const path = String(route).trim().replace(/^\/+/, "").replace(/\/+$/, "");
-
-    const url = new URL(`${this.baseURL}/${path}`);
-    Object.entries(params).forEach(([k, v]) =>
-      url.searchParams.append(k, String(v)),
-    );
-
-    const res = await fetch(url.toString());
-
-    const data = await this.parseJson(res);
-
-    if (!res.ok) {
-      throw new Error(data?.message || res.statusText || "Erro GET");
-    }
-
-    return data;
+    return {
+      "Content-Type": "application/json",
+      ...(token && {
+        Authorization: `Bearer ${token}`,
+      }),
+    };
   }
 
   async post<K extends KeysByMethod<"POST">>(
     route: K,
-		params: RequestOf<K>,
-		credentials: RequestCredentials = "same-origin"
+    params: RequestOf<K>,
+    credentials: RequestCredentials = "include",
+    retry = true,
   ): Promise<ResponseOf<K>> {
     const path = String(route).trim().replace(/^\/+/, "").replace(/\/+$/, "");
+
     const url = `${this.baseURL}/${path}`;
+
     const res = await fetch(url, {
       method: "POST",
-			credentials,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        ...params,
-      }),
+      credentials,
+      headers: this.createHeaders(),
+      body: JSON.stringify(params),
     });
 
     const data = await this.parseJson(res);
 
+    if (res.status === 401 && data?.code === "TOKEN_EXPIRED" && retry) {
+      await this.refreshToken?.();
+
+      return this.post(route, params, credentials, false);
+    }
+
     if (!res.ok) {
       throw {
         status: res.status,
-        code: data?.cd_status ?? res.status,
-        message:
-          data?.ds_erro ?? data?.message ?? res.statusText ?? "Erro POST",
+        code: data?.code ?? res.status,
+        message: data?.message ?? data?.ds_erro ?? "Erro POST",
         data,
       };
     }

@@ -181,7 +181,7 @@ module.exports = {
   //    //res.set('X-Frame-Options', 'sameorigin');
   //    next();
   // },
-  
+
   /** The following property can be used to set addition options on the session
    * cookie used as part of adminAuth authentication system
    * Available options are documented here: https://www.npmjs.com/package/express-session#cookie
@@ -228,10 +228,10 @@ module.exports = {
   //    next();
   //},
 
-	httpNodeMiddleware: function(req, res, next) {
+  httpNodeMiddleware: function (req, res, next) {
     const cookieParser = require("cookie-parser");
     cookieParser()(req, res, next);
-	},
+  },
 
   /** When httpAdminRoot is used to move the UI to a different root path, the
    * following property can be used to identify a directory of static content

@@ -1,5 +1,8 @@
 {
-  "app_default_title": "Jeza App",
+  "app_default_title": "@JeZa",
   "text_copyright": "©Copyright 2025; MLS. Todos os direitos reservados.",
-  "text_appname": "©JeZa"
+  "text_appname": "©JeZa",
+  "text_geza_slogan": "...do pedido à entrega.",
+  "text_loading": "Carregando...",
+  "text_try_refresh_token": "Tentando atualizar conexão..."
 }

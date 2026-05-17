@@ -136,7 +136,3 @@ export const MSide: FC<HtmlHTMLAttributes<unknown> & MSideProps> = ({
     </aside>
   );
 };
-
-
-
-

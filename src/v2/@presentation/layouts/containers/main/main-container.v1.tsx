@@ -1,7 +1,14 @@
-import type { FC, HtmlHTMLAttributes } from "react";
+import { useLayoutStore } from "@jeza-v2/core/data/zustand/zustand-storage.v1";
+import { useEffect, type FC, type HtmlHTMLAttributes } from "react";
 
 export const MMainContainer: FC<HtmlHTMLAttributes<unknown>> = (props) => {
   const { ...rest } = props;
+
+  const app = useLayoutStore((s) => s?.screenData?.app);
+  useEffect(() => {
+    if (!app) return;
+    document.title = app.title;
+  }, [app]);
 
   return (
     <div

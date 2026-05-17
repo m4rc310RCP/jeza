@@ -16,3 +16,25 @@ export const createUpdateValue = <T>(
   };
 };
 /******************************************************************************/
+export const getTokenExpiration = (token: string): Date | null => {
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1])) as JwtPayload;
+
+    if (!payload.exp) {
+      return null;
+    }
+
+    return new Date(payload.exp * 1000);
+  } catch {
+    return null;
+  }
+};
+/******************************************************************************/
+export const encodeJson = (value: unknown) => {
+  return btoa(encodeURIComponent(JSON.stringify(value)));
+};
+
+export const decodeJson = <T>(value: string): T => {
+  return JSON.parse(decodeURIComponent(atob(value)));
+};
+/******************************************************************************/

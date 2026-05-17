@@ -16,9 +16,15 @@ declare global {
     longitude: number;
   }
 
-  interface IAwaitValue<T> {
+  // interface IAwaitValue<T> {
+  //   loading: boolean;
+  //   error?: string | null;
+  //   value?: T | null;
+  // }
+
+  interface IAwaitValue<T, E = TypedFetchError> {
     loading: boolean;
-    error?: string | null;
+    error?: E | null;
     value?: T | null;
   }
 
@@ -46,12 +52,52 @@ declare global {
     name: string;
     token?: string;
   }
+  interface IUserAuth extends IUser {
+    vl_senha: string;
+    in_cpf: boolean;
+    in_versenha: boolean;
+    in_docvalido: boolean;
+    in_gravar: boolean;
+  }
+
+  interface IUser {
+    nr_cpfcnpj: string;
+    ds_email: string;
+    nm_cliente: string;
+    in_bloqueado: boolean;
+  }
+
   // ---------------------------- //
+  interface IApiResponse<T = unknown> {
+    in_sucesso: boolean;
+    cd_erro?: number;
+    ds_mensagem?: string;
+    data?: T;
+  }
+
+  interface IApiError<T = unknown> {
+    in_sucesso: boolean;
+    cd_erro: number;
+    ds_mensagem: string;
+    data?: T;
+  }
+  // ---------------------------- //
+  type TScreen = "startup" | "signin" | "home";
+  // ---------------------------- //
+  interface IScreenData {
+    app: {
+      title: string;
+    };
+
+    startup: {
+      loading: true;
+      message: string;
+    };
+  }
 
   // HTTP
-  type TMethod = "GET" | "POST";
-	// type TRequestCredentials = RequestCredentials;
-
+  type TMethod = "GET" | "POST" | "PUT" | "DELETE";
+  // type TRequestCredentials = RequestCredentials;
 
   interface IRouteRef<M extends TMethod, Req = unknown, Res = unknown> {
     method: M;
@@ -62,22 +108,25 @@ declare global {
   interface IApiRoutes {
     "/api/local": IRouteRef<
       "POST",
-			{ nm_local: string },
+      { nm_local: string },
       { id_local: string; nm_local: string }[]
     >;
 
     "/geza/signin": IRouteRef<
       "POST",
-			{ nr_cpfcnpj: string; vl_senha: string },
+      { nr_cpfcnpj: string; vl_senha: string },
       { ds_token: string; tp_token: "Bearer" }
     >;
 
     "/geza/refresh": IRouteRef<
       "POST",
-			undefined,
+      undefined,
       { ds_token: string; tp_token: "Bearer" }
     >;
 
+    "/geza/test": IRouteRef<"POST", undefined, { in_valido: boolean }>;
+
+    "/geza/user": IRouteRef<"POST", undefined, IUserAuth>;
     // "/mp/pix": IRouteRef<"POST", IPayPix["request"], IPayPix["response"]>;
   }
 
@@ -90,4 +139,34 @@ declare global {
   type RequestOf<K extends keyof IApiRoutes> = IApiRoutes[K]["request"];
 
   type ResponseOf<K extends keyof IApiRoutes> = IApiRoutes[K]["response"];
+
+  //------------
+  interface JwtPayload {
+    exp: number;
+    iat?: number;
+    [key: string]: unknown;
+  }
+  //------------
+  interface IWsParams {
+    handleSignoutResponse: {
+      ds_motivo: string;
+    };
+    wsAuthChannels: {
+      "geza:log": { ds_log: string };
+    } & {
+      [key: `geza:siginout_${string}`]: IWsParams["handleSignoutResponse"];
+    };
+    //  wsMapChannels: {
+    //     "kioski:connect": {
+    //       id_canal: string;
+    //     };
+    //   } & {
+    // 		[key: `kioski:pix_${string}`]: IWsParams['pixStatusResponse']
+    //     [key: `kioski:pp_${string}`]: IWsParams["pingPongWsResponse"]["message"];
+    //     [
+    //       key: `kioski:sales_${string}`
+    //     ]: IWsParams["pingPongWsResponse"]["message"];
+    //   };
+  }
+  //------------
 }

@@ -16,3 +16,16 @@ export const createUpdateValue = <T>(
   };
 };
 /******************************************************************************/
+export const getTokenExpiration = (token: string): Date | null => {
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1])) as JwtPayload;
+
+    if (!payload.exp) {
+      return null;
+    }
+
+    return new Date(payload.exp * 1000);
+  } catch {
+    return null;
+  }
+};
