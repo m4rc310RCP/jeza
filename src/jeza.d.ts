@@ -152,9 +152,9 @@ declare global {
       ds_motivo: string;
     };
     wsAuthChannels: {
-      "geza:log": { ds_log: string };
+      "jeza:log": { ds_log: string };
     } & {
-      [key: `geza:siginout_${string}`]: IWsParams["handleSignoutResponse"];
+      [key: `jeza:siginout_${string}`]: IWsParams["handleSignoutResponse"];
     };
     //  wsMapChannels: {
     //     "kioski:connect": {

@@ -1,6 +1,6 @@
 import { WsService } from "./ws-service.v1";
 
-const URI = `wss://node-red.mls.m4rc310.com.br/ws/geza`;
+const URI = `wss://node-red.mls.m4rc310.com.br/ws/jeza`;
 
 export const ws = new WsService<IWsParams["wsAuthChannels"]>(URI, {
   debug: true,
@@ -9,6 +9,6 @@ export const ws = new WsService<IWsParams["wsAuthChannels"]>(URI, {
 
 export const createSiginoutChannel = <T extends string>(
   nr_cpfcnpj: T,
-): `geza:siginout_${T}` => {
-  return `geza:siginout_${nr_cpfcnpj}`;
+): `jeza:siginout_${T}` => {
+  return `jeza:siginout_${nr_cpfcnpj}`;
 };

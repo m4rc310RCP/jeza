@@ -17,6 +17,7 @@ import { apiMP } from "@jeza-v2/core/index";
 import { sanitizeDocument } from "@jeza-v2/core/utils/documents.v1";
 import { getTokenExpiration } from "@jeza-v2/core/utils/general.v1";
 import { isApiError } from "@jeza-v2/core/services/http/typed-fetch.v2";
+import { ws, createSiginoutChannel } from "@jeza-v2/core/services/ws/geza-ws.v1";
 
 
 
@@ -70,14 +71,28 @@ const MAuthProvider: FC<PropsWithChildren> = ({ children }) => {
 	const dateExpiration = useLayoutStore(s => s.dateExpiration);
 	const user = useLayoutStore(s => s.user);
 	const setUser = useLayoutStore(s => s.setUser);
+	const cpfCnpj = useLayoutStore(s => s.cpfCnpj);
+	const setCpfCnpj = useLayoutStore(s => s.setCpfCnpj);
+
+
+	useEffect(()=>{
+		if (cpfCnpj){
+			const channel = createSiginoutChannel(cpfCnpj);
+			ws.on(channel, ({ds_motivo})=> {
+				console.log(ds_motivo);
+			});
+		}
+	}, [cpfCnpj])
 
 	useEffect(()=>{
 		if (user){
+			const cc = sanitizeDocument(user.nr_cpfcnpj);
+			setCpfCnpj(cc);
 			setScreen('home');
 		}else {
 			setScreen('signin');
 		}
-	}, [user, setScreen]);
+	}, [user, setScreen, setCpfCnpj]);
 
 	usePersistentScheduler({
 		nextDate: dateExpiration,
