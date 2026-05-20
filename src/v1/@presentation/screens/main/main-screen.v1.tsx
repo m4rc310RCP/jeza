@@ -1,6 +1,6 @@
 import { type FC, type HtmlHTMLAttributes, useRef } from "react";
 
-import { X, Plus, FileCode2, Home, Search } from "lucide-react";
+import { X, Plus, Search } from "lucide-react";
 
 import { MToggleSide } from "@jeza/components";
 import { MMapPart, MPartNone } from "@jeza/containers";
@@ -147,21 +147,20 @@ export const MMainScreen: FC<HtmlHTMLAttributes<HTMLDivElement>> = ({
             <div className="flex-1 overflow-x-auto">
               <div className="flex min-w-max h-10">
                 {tabs.map((tab) => {
-                  const active = tab.id === activeTab;
+                  const active = tab?.id === activeTab;
 
                   return (
                     <div
                       key={tab.id}
-                      onClick={() => store.setActiveTab(tab.id)}
+                      onClick={() => store.setActiveTab(tab.id!)}
                       className={`px-3 flex items-center gap-2 ${
                         active ? "bg-[#1e1e1e]" : "bg-[#2d2d2d]"
                       }`}
                     >
-                      {renderIcon(tab)}
+                      {/* {renderIcon?.(tab)} */}
                       {tab.title}
-
                       {!tab.pinned && (
-                        <button onClick={(e) => closeTab(e, tab.id)}>
+                        <button onClick={(e) => closeTab(e, tab.id!)}>
                           <X size={13} />
                         </button>
                       )}
@@ -276,7 +275,7 @@ const TabRenderer = ({ tab, isActive }: { tab: TTab; isActive: boolean }) => {
   }
 };
 
-const renderIcon = (tab: TTab) => {
-  if (tab.icon === "home") return <Home size={14} />;
-  return <FileCode2 size={14} />;
-};
+// const renderIcon = (tab: TTab) => {
+//   if (tab.icon === "home") return <Home size={14} />;
+//   return <FileCode2 size={14} />;
+// };

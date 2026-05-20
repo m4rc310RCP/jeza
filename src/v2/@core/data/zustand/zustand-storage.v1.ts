@@ -157,12 +157,19 @@ interface ILayoutStore {
 
   token: string | null;
   setToken: (token: ILayoutStore["token"]) => void;
+	dateExpiration: Date|null;
+	setDateExpiration: (dateExpiration:ILayoutStore["dateExpiration"])=>void;
 
   user: IUser | null;
   setUser: (user: ILayoutStore["user"]) => void;
 
   cpfCnpj: string | null;
   setCpfCnpj: (cpfCnpj: ILayoutStore["cpfCnpj"]) => void;
+
+  tabs: TTab[];
+  setTabs: (tabs: ILayoutStore["tabs"]) => void;
+  activeTab: string | null;
+  setActiveTab: (activeTab: ILayoutStore["activeTab"]) => void;
 }
 
 const screenDataDefault: ILayoutStore["screenData"] = {
@@ -201,6 +208,20 @@ export const useLayoutStore = create<ILayoutStore>()(
       setCpfCnpj(cpfCnpj) {
         set({ cpfCnpj });
       },
+      // ------------------------------------ //
+      tabs: [],
+      setTabs(tabs) {
+        set({ tabs });
+      },
+      activeTab: null,
+      setActiveTab(activeTab) {
+        set({ activeTab });
+      },
+      // ------------------------------------ //
+			dateExpiration: null,
+			setDateExpiration(dateExpiration) {
+				set({dateExpiration});
+			},
       // ------------------------------------ //
     }),
     {

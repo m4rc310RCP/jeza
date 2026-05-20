@@ -1,5 +1,11 @@
-import { MLogoGeza, MSide, MUserMinicard } from "@jeza-v2/presentation/layouts";
+import {
+  MLogoGeza,
+  MSide,
+  MUserMinicard,
+  MTabsScreen,
+} from "@jeza-v2/presentation/layouts";
 import { type FC, type HtmlHTMLAttributes } from "react";
+import { MTabContextProvider } from "@jeza-v2/presentation/contexts";
 
 export const MMainScreen: FC<HtmlHTMLAttributes<unknown>> = () => {
   return (
@@ -17,7 +23,11 @@ export const MMainScreen: FC<HtmlHTMLAttributes<unknown>> = () => {
         <MSide side="LEFT" className=" h-full">
           A
         </MSide>
-        <div className="flex-1">B</div>
+        <div className="flex-1">
+          <MTabContextProvider>
+            <MTabsScreen />
+          </MTabContextProvider>
+        </div>
         <MSide side="RIGHT" className=" h-full">
           C
         </MSide>

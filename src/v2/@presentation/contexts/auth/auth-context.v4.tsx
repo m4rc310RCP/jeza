@@ -322,8 +322,8 @@ const MAuthProvider: FC<PropsWithChildren> = ({ children }) => {
   // --------------------------------------------------------
 
   useEffect(() => {
-		// eslint-disable-next-line react-hooks/set-state-in-effect
-		validateSession();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    validateSession();
   }, [validateSession]);
 
   // useEffect(() => {
