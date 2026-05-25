@@ -66,7 +66,8 @@ const MAppProvider: FC<PropsWithChildren> = ({ children }) => {
 					id: "DELIVERIES",
 					title: m.text_jeza_tab_title_deliveries_title,
 					icon: 'deliveries',
-					view: 'deliveries'
+					view: 'deliveries',
+					loading: false
 				});
 			}else{
 				setTab(tab);

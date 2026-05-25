@@ -3,7 +3,7 @@
 // import { X } from "lucide-react";
 import { useLayoutStore } from "@jeza-v2/core/data/zustand/zustand-storage.v1";
 import { useMTab } from "@jeza-v2/presentation/contexts";
-import { MTabDashboard, MTabDelivery } from "@jeza-v2/presentation/layouts";
+import { MSkeletonPage, MTabDashboard, MTabDelivery } from "@jeza-v2/presentation/layouts";
 import { X } from "lucide-react";
 import type { FC, HtmlHTMLAttributes } from "react";
 import { GiRadarSweep } from "react-icons/gi";
@@ -91,6 +91,9 @@ const MContainerDefault: FC<HtmlHTMLAttributes<unknown>> = () => {
 };
 
 const TabRenderer = ({ tab }: { tab: TTab; isActive: boolean }) => {
+	if (tab.loading){
+		return <MSkeletonPage />
+	}
 	switch (tab.view) {
 		case "dashboard":
 			return <MTabDashboard />;

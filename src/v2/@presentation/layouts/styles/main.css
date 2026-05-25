@@ -73,7 +73,43 @@ body {
   --animate-spin-fast: spin 0.5s linear infinite;
   --animate-spin-medium: spin 1s linear infinite;
   --animate-spin-slow: spin 2s linear infinite;
+	--animate-shimmer: shimmer 2s infinite;
 }
 @utility w-col {
   width: 28ch;
 }
+
+/* =========================
+
+   ANIMATIONS
+
+========================= */
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@utility skeleton {
+
+  @apply relative overflow-hidden rounded-md bg-zinc-800;
+
+}
+
+@utility skeleton-shimmer {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    animation: var(--animate-shimmer);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(255 255 255 / 0.08),
+      transparent
+    );
+  }
+}
+

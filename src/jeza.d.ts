@@ -37,6 +37,7 @@ declare global {
     pinned?: boolean;
     view: TTabView;
     props?: Record<string, unknown>;
+		loading?:boolean;
   };
 
   interface ISideControl {

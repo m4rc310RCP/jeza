@@ -16,6 +16,8 @@ import { IoHomeOutline } from "react-icons/io5";
 import { GoFile } from "react-icons/go";
 // import { GiFullMotorcycleHelmet } from "react-icons/gi";
 import { FaMotorcycle } from "react-icons/fa6";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
 
 
 interface IMTabContextValues {
@@ -50,6 +52,7 @@ const MTabContextProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const handleRenderIcon = useMemo(
     () => (tab: TTab) => {
+			if (tab.loading) return <AiOutlineLoading3Quarters size={14} className="animate-spin-medium"/>
       if (tab.icon === "dashboard") return <IoHomeOutline size={14} />;
       if (tab.icon === "deliveries") return <FaMotorcycle size={14} />;
       return <GoFile size={14} />;
@@ -74,8 +77,6 @@ const MTabContextProvider: FC<PropsWithChildren> = ({ children }) => {
       e.stopPropagation();
       const tab = tabs.find((t) => t.id === id);
       if (!tab || tab.pinned) return;
-
-
 
       const next = tabs.filter((t) => t.id !== id);
       setTabs(next);
