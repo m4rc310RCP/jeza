@@ -14,6 +14,9 @@ import { useLayoutStore } from "@jeza-v2/core/data/zustand/zustand-storage.v1";
 //import { FileCode2, Home } from "lucide-react";
 import { IoHomeOutline } from "react-icons/io5";
 import { GoFile } from "react-icons/go";
+// import { GiFullMotorcycleHelmet } from "react-icons/gi";
+import { FaMotorcycle } from "react-icons/fa6";
+
 
 interface IMTabContextValues {
   fn_criartab: (tab: TTab) => void;
@@ -31,7 +34,7 @@ const MTabContextProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const tabs = useLayoutStore((s) => s.tabs);
   const setTabs = useLayoutStore((s) => s.setTabs);
-  const activeTab = useLayoutStore((s) => s.activeTab);
+  const setTab = useLayoutStore((s) => s.setTab);
   const setActiveTab = useLayoutStore((s) => s.setActiveTab);
 
   // const TabRenderer = ({ tab, isActive }: { tab: TTab; isActive: boolean }) => {
@@ -45,34 +48,47 @@ const MTabContextProvider: FC<PropsWithChildren> = ({ children }) => {
   //   }
   // };
 
-  const handleRenderIcon = useMemo(() => (tab: TTab) => {
-    if (tab.icon === "home") return <IoHomeOutline size={14} />;
-    return <GoFile size={14} />;
-  }, []);
+  const handleRenderIcon = useMemo(
+    () => (tab: TTab) => {
+      if (tab.icon === "dashboard") return <IoHomeOutline size={14} />;
+      if (tab.icon === "deliveries") return <FaMotorcycle size={14} />;
+      return <GoFile size={14} />;
+    },
+    [],
+  );
 
-  const handleCreateTab = useMemo(() =>  (tab: TTab) => {
-    // const id = typeof crypto !== "undefined" && "randomUUID" in crypto
-    //     ? crypto.randomUUID()
-    //     : String(Date.toString());
-    // tab.id = id;
-    setTabs([...tabs, { ...tab }]);
-    setActiveTab(tab.id);
-  }, [setActiveTab, setTabs, tabs]);
+  const handleCreateTab = useMemo(
+    () => (tab: TTab) => {
+      // const id = typeof crypto !== "undefined" && "randomUUID" in crypto
+      //     ? crypto.randomUUID()
+      //     : String(Date.toString());
+      // tab.id = id;
+      setTabs([...tabs, { ...tab }]);
+      setActiveTab(tab.id);
+    },
+    [setActiveTab, setTabs, tabs],
+  );
 
-  const handleCloseTab = useMemo( () => (
-    e: React.MouseEvent<HTMLButtonElement>,
-    id: string,
-  ) => {
-    e.stopPropagation();
-    const tab = tabs.find((t) => t.id === id);
-    if (!tab || tab.pinned) return;
+  const handleCloseTab = useMemo(
+    () => (e: React.MouseEvent<HTMLButtonElement>, id: string) => {
+      e.stopPropagation();
+      const tab = tabs.find((t) => t.id === id);
+      if (!tab || tab.pinned) return;
 
-    const next = tabs.filter((t) => t.id !== id);
-    setTabs(next);
-    if (activeTab === id) {
-      setActiveTab(next[0]?.id ?? "");
-    }
-  }, [activeTab, setActiveTab, setTabs, tabs]);
+
+
+      const next = tabs.filter((t) => t.id !== id);
+      setTabs(next);
+
+			setTab(next[0]);
+
+      // if (next[0].id === id) {
+      //   setActiveTab(next[0]?.id ?? "");
+			// 	setTab(next[0]);
+      // }
+    },
+    [ setTabs, setTab, tabs],
+  );
 
   useEffect(() => {
     update("fn_criartab", handleCreateTab);

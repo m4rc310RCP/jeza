@@ -157,8 +157,8 @@ interface ILayoutStore {
 
   token: string | null;
   setToken: (token: ILayoutStore["token"]) => void;
-	dateExpiration: Date|null;
-	setDateExpiration: (dateExpiration:ILayoutStore["dateExpiration"])=>void;
+  dateExpiration: Date | null;
+  setDateExpiration: (dateExpiration: ILayoutStore["dateExpiration"]) => void;
 
   user: IUser | null;
   setUser: (user: ILayoutStore["user"]) => void;
@@ -170,6 +170,14 @@ interface ILayoutStore {
   setTabs: (tabs: ILayoutStore["tabs"]) => void;
   activeTab: string | null;
   setActiveTab: (activeTab: ILayoutStore["activeTab"]) => void;
+	tab:TTab|null;
+	setTab: (tab: ILayoutStore['tab'])=> void;
+
+	balance: IUserBalance | null;
+	setBalance: (balance: ILayoutStore['balance']) => void;
+
+	layoutPreferences: ILayoutPreferences;
+	setLayoutPreferences: (layoutPreferences: ILayoutStore['layoutPreferences']) => void;
 }
 
 const screenDataDefault: ILayoutStore["screenData"] = {
@@ -179,6 +187,15 @@ const screenDataDefault: ILayoutStore["screenData"] = {
     message: m.text_loading,
   },
 };
+
+const layoutPreferencesDefault : ILayoutPreferences = {
+	tabs:{
+		dashboard: {
+			showBalance: true
+		}
+	}
+}
+
 
 export const useLayoutStore = create<ILayoutStore>()(
   persist(
@@ -218,9 +235,24 @@ export const useLayoutStore = create<ILayoutStore>()(
         set({ activeTab });
       },
       // ------------------------------------ //
-			dateExpiration: null,
-			setDateExpiration(dateExpiration) {
-				set({dateExpiration});
+      dateExpiration: null,
+      setDateExpiration(dateExpiration) {
+        set({ dateExpiration });
+      },
+      // ------------------------------------ //
+			balance: null,
+			setBalance(balance) {
+				set({ balance });
+			},
+      // ------------------------------------ //
+			layoutPreferences: layoutPreferencesDefault,
+			setLayoutPreferences(layoutPreferences) {
+				set({ layoutPreferences })
+			},
+      // ------------------------------------ //
+			tab: null,
+			setTab(tab) {
+				set({ tab });
 			},
       // ------------------------------------ //
     }),

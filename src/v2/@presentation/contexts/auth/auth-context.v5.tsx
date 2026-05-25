@@ -16,7 +16,6 @@
 // 	getTokenExpiration,
 // } from "@jeza-v2/core/utils/general.v1";
 
-
 // import { sanitizeDocument } from "@jeza-v2/core/utils/documents.v1";
 
 // import { usePersistentScheduler } from "@jeza-v2/core/schedules/schedule-control-time-context.v1";
@@ -63,7 +62,6 @@
 // 	const setToken = useLayoutStore(s => s.setToken);
 // 	const loginRef = useRef(false);
 // 	const refreshTokenRef = useRef(false);
-
 
 // 	const setScreen = useLayoutStore(s => s.setScreen);
 // 	const setDateExpiration = useLayoutStore(s => s.setDateExpiration);
@@ -134,7 +132,6 @@
 // 			update('oc_autenticado', {loading: false, error: isApiError(error)?error.ds_mensagem : error});
 // 		})
 // 	}, [setToken, update])
-
 
 // 	const handleRefresh = useMemo(() => () => {
 // 		refreshTokenRef.current = true;

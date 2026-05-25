@@ -2,7 +2,11 @@
   "app_default_title": "@JeZa",
   "text_copyright": "©Copyright 2025; MLS. Todos os direitos reservados.",
   "text_appname": "©JeZa",
-  "text_geza_slogan": "...do pedido à entrega.",
+  "text_jeza_slogan": "...do pedido à entrega.",
   "text_loading": "Carregando...",
-  "text_try_refresh_token": "Tentando atualizar conexão..."
+  "text_try_refresh_token": "Tentando atualizar conexão...",
+	"text_jeza_tab_title_dashboard": "Dashboard",
+	"text_jeza_tab_title_deliveries_title": "Lista de entregas",
+	"text_jeza_tab_description_dashboard": "Monitoramento de entregas em tempo real",
+	"text_jeza_tab_dashboard_balance_title": "Saldo disponível para contratações"
 }
