@@ -28,12 +28,12 @@ declare global {
     value?: T | null;
   }
 
-  type TTabView = "dashboard" | "map" | "editor" | "none" | "payments";
+  type TTabView = "dashboard" | "map" | "editor" | "none" | "payments" | "deliveries";
 
   type TTab = {
     id: string;
     title: string;
-    icon?: "home" | "code";
+    icon?:  TTabView;
     pinned?: boolean;
     view: TTabView;
     props?: Record<string, unknown>;
@@ -67,6 +67,19 @@ declare global {
     in_bloqueado: boolean;
   }
 
+	interface IUserBalance {
+		qt_entregas: number;
+		vl_saldo: number;
+	}
+
+  // ---------------------------- //
+	interface ILayoutPreferences {
+		tabs:{
+			dashboard:{
+				showBalance: boolean;
+			}
+		}
+	}
   // ---------------------------- //
   interface IApiResponse<T = unknown> {
     in_sucesso: boolean;
@@ -112,13 +125,13 @@ declare global {
       { id_local: string; nm_local: string }[]
     >;
 
-    "/geza/signin": IRouteRef<
+    "/jeza/login": IRouteRef<
       "POST",
       { nr_cpfcnpj: string; vl_senha: string },
       { ds_token: string; tp_token: "Bearer" }
     >;
 
-    "/geza/refresh": IRouteRef<
+    "/jeza/refresh": IRouteRef<
       "POST",
       undefined,
       { ds_token: string; tp_token: "Bearer" }
@@ -126,7 +139,8 @@ declare global {
 
     "/geza/test": IRouteRef<"POST", undefined, { in_valido: boolean }>;
 
-    "/geza/user": IRouteRef<"POST", undefined, IUserAuth>;
+    "/jeza/user": IRouteRef<"POST", undefined, IUserAuth>;
+    "/jeza/user/refresh/balances": IRouteRef<"POST", undefined, IUserBalance>;
     // "/mp/pix": IRouteRef<"POST", IPayPix["request"], IPayPix["response"]>;
   }
 
@@ -147,26 +161,30 @@ declare global {
     [key: string]: unknown;
   }
   //------------
-  interface IWsParams {
+  interface IWsUserChannels {
     handleSignoutResponse: {
       ds_motivo: string;
     };
+
+    // statusResponse: {};
+
+		wsBalanceChannels: {
+			"jeza:balance_brodcast": {
+				ds_maessage: string
+			}
+		}
+		& { [key: `jeza:user_balances_${string}`]: IUserBalance }
+		;
+
     wsAuthChannels: {
       "jeza:log": { ds_log: string };
-    } & {
-      [key: `jeza:siginout_${string}`]: IWsParams["handleSignoutResponse"];
-    };
-    //  wsMapChannels: {
-    //     "kioski:connect": {
-    //       id_canal: string;
-    //     };
-    //   } & {
-    // 		[key: `kioski:pix_${string}`]: IWsParams['pixStatusResponse']
-    //     [key: `kioski:pp_${string}`]: IWsParams["pingPongWsResponse"]["message"];
-    //     [
-    //       key: `kioski:sales_${string}`
-    //     ]: IWsParams["pingPongWsResponse"]["message"];
-    //   };
+    } 
+		& {
+      [
+        key: `jeza:siginout_${string}`
+      ]: IWsUserChannels["handleSignoutResponse"];
+    } 
+		& { [key: `jeza:status_${string}`]: IWsUserChannels["statusResponse"] }
   }
   //------------
 }
