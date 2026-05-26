@@ -171,6 +171,7 @@ export class WsService<ChannelMap extends object> {
 
     this.socket.onerror = (error) => {
       this.log("socket error", error);
+			console.log(this.state);
     };
 
     this.socket.onclose = () => {
