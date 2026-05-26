@@ -13,6 +13,9 @@ const rootPathV2 = './src/v2'
 
 // https://vite.dev/config/
 export default defineConfig({
+	build: {
+		sourcemap: false,
+	},
   plugins: [react(), tailwindcss(), basicSsl()],
 	 server: {
 		  host: "app.mls.m4rc310.com.br",
