@@ -170,14 +170,16 @@ interface ILayoutStore {
   setTabs: (tabs: ILayoutStore["tabs"]) => void;
   activeTab: string | null;
   setActiveTab: (activeTab: ILayoutStore["activeTab"]) => void;
-	tab:TTab|null;
-	setTab: (tab: ILayoutStore['tab'])=> void;
+  tab: TTab | null;
+  setTab: (tab: ILayoutStore["tab"]) => void;
 
-	balance: IUserBalance | null;
-	setBalance: (balance: ILayoutStore['balance']) => void;
+  balance: IUserBalance | null;
+  setBalance: (balance: ILayoutStore["balance"]) => void;
 
-	layoutPreferences: ILayoutPreferences;
-	setLayoutPreferences: (layoutPreferences: ILayoutStore['layoutPreferences']) => void;
+  layoutPreferences: ILayoutPreferences;
+  setLayoutPreferences: (
+    layoutPreferences: ILayoutStore["layoutPreferences"],
+  ) => void;
 }
 
 const screenDataDefault: ILayoutStore["screenData"] = {
@@ -188,14 +190,13 @@ const screenDataDefault: ILayoutStore["screenData"] = {
   },
 };
 
-const layoutPreferencesDefault : ILayoutPreferences = {
-	tabs:{
-		dashboard: {
-			showBalance: true
-		}
-	}
-}
-
+const layoutPreferencesDefault: ILayoutPreferences = {
+  tabs: {
+    dashboard: {
+      showBalance: true,
+    },
+  },
+};
 
 export const useLayoutStore = create<ILayoutStore>()(
   persist(
@@ -240,20 +241,20 @@ export const useLayoutStore = create<ILayoutStore>()(
         set({ dateExpiration });
       },
       // ------------------------------------ //
-			balance: null,
-			setBalance(balance) {
-				set({ balance });
-			},
+      balance: null,
+      setBalance(balance) {
+        set({ balance });
+      },
       // ------------------------------------ //
-			layoutPreferences: layoutPreferencesDefault,
-			setLayoutPreferences(layoutPreferences) {
-				set({ layoutPreferences })
-			},
+      layoutPreferences: layoutPreferencesDefault,
+      setLayoutPreferences(layoutPreferences) {
+        set({ layoutPreferences });
+      },
       // ------------------------------------ //
-			tab: null,
-			setTab(tab) {
-				set({ tab });
-			},
+      tab: null,
+      setTab(tab) {
+        set({ tab });
+      },
       // ------------------------------------ //
     }),
     {

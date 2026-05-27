@@ -12,7 +12,7 @@ export const MMainScreen: FC<HtmlHTMLAttributes<unknown>> = () => {
   const { ds_test } = useMAuth();
 
   return (
-    <div className="flex flex-1 flex-col gap-1=px">
+    <div className="flex flex-1  flex-col gap-1=px">
       <div className="bg-black flex p-1 gap-1 items-center">
         <div className="flex">
           <MLogoGeza isMini={true} />
@@ -22,11 +22,11 @@ export const MMainScreen: FC<HtmlHTMLAttributes<unknown>> = () => {
           <MUserMinicard />
         </div>
       </div>
-      <div className="flex flex-1">
+      <div className="flex  flex-1">
         <MSide side="LEFT" className="h-full bg-[#19364A]">
           {ds_test}
         </MSide>
-        <div className="flex-1">
+        <div className="flex flex-1 ">
           <MTabContextProvider>
             <MTabsScreen />
           </MTabContextProvider>

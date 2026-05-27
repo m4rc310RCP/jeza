@@ -73,7 +73,7 @@ body {
   --animate-spin-fast: spin 0.5s linear infinite;
   --animate-spin-medium: spin 1s linear infinite;
   --animate-spin-slow: spin 2s linear infinite;
-	--animate-shimmer: shimmer 2s infinite;
+  --animate-shimmer: shimmer 2s infinite;
 }
 @utility w-col {
   width: 28ch;
@@ -92,9 +92,7 @@ body {
 }
 
 @utility skeleton {
-
   @apply relative overflow-hidden rounded-md bg-zinc-800;
-
 }
 
 @utility skeleton-shimmer {
@@ -112,4 +110,3 @@ body {
     );
   }
 }
-

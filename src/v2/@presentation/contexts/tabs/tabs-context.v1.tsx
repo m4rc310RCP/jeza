@@ -17,8 +17,7 @@ import { GoFile } from "react-icons/go";
 // import { GiFullMotorcycleHelmet } from "react-icons/gi";
 import { FaMotorcycle } from "react-icons/fa6";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-
-
+import { RiListCheck3 } from "react-icons/ri";
 
 interface IMTabContextValues {
   fn_criartab: (tab: TTab) => void;
@@ -52,9 +51,17 @@ const MTabContextProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const handleRenderIcon = useMemo(
     () => (tab: TTab) => {
-			if (tab.loading) return <AiOutlineLoading3Quarters size={14} className="animate-spin-medium"/>
+      if (tab.loading)
+        return (
+          <AiOutlineLoading3Quarters
+            size={14}
+            className="animate-spin-medium"
+          />
+        );
       if (tab.icon === "dashboard") return <IoHomeOutline size={14} />;
       if (tab.icon === "deliveries") return <FaMotorcycle size={14} />;
+      if (tab.icon === "finantials_movements")
+        return <RiListCheck3 size={14} />;
       return <GoFile size={14} />;
     },
     [],
@@ -79,16 +86,14 @@ const MTabContextProvider: FC<PropsWithChildren> = ({ children }) => {
       if (!tab || tab.pinned) return;
 
       const next = tabs.filter((t) => t.id !== id);
+      setTab(next[0]);
       setTabs(next);
-
-			setTab(next[0]);
-
       // if (next[0].id === id) {
       //   setActiveTab(next[0]?.id ?? "");
-			// 	setTab(next[0]);
+      // 	setTab(next[0]);
       // }
     },
-    [ setTabs, setTab, tabs],
+    [setTabs, setTab, tabs],
   );
 
   useEffect(() => {

@@ -28,16 +28,23 @@ declare global {
     value?: T | null;
   }
 
-  type TTabView = "dashboard" | "map" | "editor" | "none" | "payments" | "deliveries";
+  type TTabView =
+    | "dashboard"
+    | "map"
+    | "editor"
+    | "none"
+    | "payments"
+    | "finantials_movements"
+    | "deliveries";
 
   type TTab = {
     id: string;
     title: string;
-    icon?:  TTabView;
+    icon?: TTabView;
     pinned?: boolean;
     view: TTabView;
     props?: Record<string, unknown>;
-		loading?:boolean;
+    loading?: boolean;
   };
 
   interface ISideControl {
@@ -68,19 +75,19 @@ declare global {
     in_bloqueado: boolean;
   }
 
-	interface IUserBalance {
-		qt_entregas: number;
-		vl_saldo: number;
-	}
+  interface IUserBalance {
+    qt_entregas: number;
+    vl_saldo: number;
+  }
 
   // ---------------------------- //
-	interface ILayoutPreferences {
-		tabs:{
-			dashboard:{
-				showBalance: boolean;
-			}
-		}
-	}
+  interface ILayoutPreferences {
+    tabs: {
+      dashboard: {
+        showBalance: boolean;
+      };
+    };
+  }
   // ---------------------------- //
   interface IApiResponse<T = unknown> {
     in_sucesso: boolean;
@@ -142,6 +149,19 @@ declare global {
 
     "/jeza/user": IRouteRef<"POST", undefined, IUserAuth>;
     "/jeza/user/refresh/balances": IRouteRef<"POST", undefined, IUserBalance>;
+    "/jeza/deliveries": IRouteRef<
+      "POST",
+      undefined,
+      {
+        dt_movto: Date;
+        in_cancelado: boolean;
+        nr_cpfcnpj: string;
+        nr_docto: string;
+        tp_fonte: string;
+        tp_movto: "NEW_DELIVERY" | "ADD_FUND" | "SERVICE_VALUE";
+        vl_movto: number;
+      }[]
+    >;
     // "/mp/pix": IRouteRef<"POST", IPayPix["request"], IPayPix["response"]>;
   }
 
@@ -169,23 +189,19 @@ declare global {
 
     // statusResponse: {};
 
-		wsBalanceChannels: {
-			"jeza:balance_brodcast": {
-				ds_maessage: string
-			}
-		}
-		& { [key: `jeza:user_balances_${string}`]: IUserBalance }
-		;
+    wsBalanceChannels: {
+      "jeza:balance_brodcast": {
+        ds_maessage: string;
+      };
+    } & { [key: `jeza:user_balances_${string}`]: IUserBalance };
 
     wsAuthChannels: {
       "jeza:log": { ds_log: string };
-    } 
-		& {
+    } & {
       [
         key: `jeza:siginout_${string}`
       ]: IWsUserChannels["handleSignoutResponse"];
-    } 
-		& { [key: `jeza:status_${string}`]: IWsUserChannels["statusResponse"] }
+    } & { [key: `jeza:status_${string}`]: IWsUserChannels["statusResponse"] };
   }
   //------------
 }

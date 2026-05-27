@@ -9,7 +9,7 @@ export const MSwithScreen: FC<HtmlHTMLAttributes<unknown>> = () => {
   const screen = useLayoutStore((s) => s.screen);
   // const { st_screen } = useMAuth();
   return (
-    <div className="flex flex-1">
+    <div className="flex flex-1  ">
       {screen === "startup" && <MSplasScreenStartup />}
       {screen === "home" && <MMainScreen />}
       {screen === "signin" && <MContainerSignin />}

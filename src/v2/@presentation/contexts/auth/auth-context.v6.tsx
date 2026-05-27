@@ -231,16 +231,14 @@ const MAuthProvider: FC<PropsWithChildren> = ({ children }) => {
   // UNMOUNT
   // --------------------------------------------------------
 
-useEffect(() => {
+  useEffect(() => {
+    const ws = wsRef.current;
 
-  const ws = wsRef.current;
-
-  return () => {
-    unsubscribeRef.current?.();
-    ws.close();
-  };
-
-}, []);
+    return () => {
+      unsubscribeRef.current?.();
+      ws.close();
+    };
+  }, []);
 
   // --------------------------------------------------------
   // PROVIDER

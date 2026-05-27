@@ -17,10 +17,10 @@ export const createJezaUserWs = () => {
 };
 
 export const createJezaBalanceWS = () => {
-	return new WsService<IWsUserChannels['wsBalanceChannels']>(`${URL}/ws/jeza`, {
-		heartbeat:false
-	});
-}
+  return new WsService<IWsUserChannels["wsBalanceChannels"]>(`${URL}/ws/jeza`, {
+    heartbeat: false,
+  });
+};
 
 export const createSiginoutChannel = <T extends string>(
   nr_cpfcnpj: T,

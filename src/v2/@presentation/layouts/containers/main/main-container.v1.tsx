@@ -14,11 +14,11 @@ export const MMainContainer: FC<HtmlHTMLAttributes<unknown>> = (props) => {
     <div
       {...rest}
       className="
-			flex
-			min-w-screen min-h-screen overflow-hidden
-			text-white leading-none 
-			select-none text-sm
-			bg-[#1F1F1F]"
+				flex
+				min-w-screen min-h-screen overflow-hidden
+				text-white leading-none 
+				select-none text-sm
+				bg-[#1F1F1F]"
     />
   );
 };

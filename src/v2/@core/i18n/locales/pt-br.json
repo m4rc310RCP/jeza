@@ -5,9 +5,14 @@
   "text_jeza_slogan": "...do pedido à entrega.",
   "text_loading": "Carregando...",
   "text_try_refresh_token": "Tentando atualizar conexão...",
-	"text_jeza_tab_title_dashboard": "Dashboard",
-	"text_jeza_tab_title_deliveries_title": "Lista de entregas",
-	"text_jeza_tab_description_dashboard": "Monitoramento de entregas em tempo real",
-	"text_jeza_tab_dashboard_balance_title": "Saldo disponível para contratações",
+  "text_jeza_tab_title_dashboard": "Dashboard",
+  "text_jeza_tab_title_deliveries_title": "Lista de entregas",
+  "text_jeza_tab_description_dashboard": "Monitoramento de entregas em tempo real",
+  "text_jeza_tab_dashboard_balance_title": "Saldo disponível para contratações",
+  "text_jeza_tab_dashboard_balance_subtitle": "Carteira de entregas",
+  "text_jeza_tab_balance_movto_list": "Lista de Transações",
+  "text_jeza_tab_balance_movto_list_title": "Transações",
+  "text_jeza_tab_balance_movto_list_subtitle": "Histórico completo de entradas e saídas",
+  "text_jeza_tab_dashboard_balance_add": "Adicionar",
   "text_geza_slogan": "...do pedido à entrega."
 }
