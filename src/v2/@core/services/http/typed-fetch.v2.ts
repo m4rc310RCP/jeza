@@ -1,4 +1,4 @@
-import { useLayoutStore } from "@jeza-v2/core/data/zustand/zustand-storage.v1";
+import { useStoreV1 } from "@jeza-v2/core/data/zustand/zustand-storage.v1";
 
 import { TypedFetchError } from "./type-fetch-error.v1";
 
@@ -32,7 +32,7 @@ export class TypedFetch {
   // ------------------------------------
 
   private getHeaders(token?: string): HeadersInit {
-    const state = useLayoutStore.getState();
+    const state = useStoreV1.getState();
 
     const authToken = token ?? state.token;
 

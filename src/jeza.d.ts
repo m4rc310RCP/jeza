@@ -52,6 +52,10 @@ declare global {
     name: string;
     token?: string;
   }
+  interface IDeviceRegister {
+		nr_registro: string;
+	}
+
   interface IUserAuth extends IUser {
     vl_senha: string;
     in_cpf: boolean;
@@ -127,6 +131,7 @@ declare global {
     "/geza/test": IRouteRef<"POST", undefined, { in_valido: boolean }>;
 
     "/geza/user": IRouteRef<"POST", undefined, IUserAuth>;
+    "/jeza/app/register": IRouteRef<"POST", IDeviceRegister, undefined>;
     // "/mp/pix": IRouteRef<"POST", IPayPix["request"], IPayPix["response"]>;
   }
 
@@ -156,17 +161,6 @@ declare global {
     } & {
       [key: `jeza:siginout_${string}`]: IWsParams["handleSignoutResponse"];
     };
-    //  wsMapChannels: {
-    //     "kioski:connect": {
-    //       id_canal: string;
-    //     };
-    //   } & {
-    // 		[key: `kioski:pix_${string}`]: IWsParams['pixStatusResponse']
-    //     [key: `kioski:pp_${string}`]: IWsParams["pingPongWsResponse"]["message"];
-    //     [
-    //       key: `kioski:sales_${string}`
-    //     ]: IWsParams["pingPongWsResponse"]["message"];
-    //   };
   }
   //------------
 }
