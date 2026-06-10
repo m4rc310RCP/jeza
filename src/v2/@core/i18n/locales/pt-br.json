@@ -4,5 +4,11 @@
   "text_appname": "JℇZ𝛂",
   "text_geza_slogan": "do pedido à entrega.",
   "text_loading": "Carregando...",
-  "text_try_refresh_token": "Tentando atualizar conexão..."
+  "text_try_refresh_token": "Tentando atualizar conexão...",
+  "menu_dashboard": "Dashboard",
+  "menu_dashboard_subtitle": "Monitoramento e controle",
+  "menu_transactions": "Transações",
+  "menu_settings": "Configurações",
+  "title_app_online": "JℇZ𝛂 - {0}",
+  "title_app_signin": "JℇZ𝛂 - Autenticar"
 }

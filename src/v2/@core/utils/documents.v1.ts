@@ -196,3 +196,11 @@ export const isValidCNPJ = (value: string) => {
 export const isValidDocument = (value: string) => {
   return isCPF(value) ? isValidCPF(value) : isValidCNPJ(value);
 };
+
+export const maskDocument = (document: string) => {
+  const sanitized = sanitizeDocument(document);
+  if (isCPF(document)) {
+    return `${sanitized.slice(0, 3)}.***.${sanitized.slice(6, 9)}-${sanitized.slice(9)}`;
+  }
+  return `${sanitized.slice(0, 2)}.***.***/${sanitized.slice(8, 12)}-${sanitized.slice(12)}`;
+};

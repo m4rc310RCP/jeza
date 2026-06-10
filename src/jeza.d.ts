@@ -9,6 +9,11 @@ declare global {
       asideLOpen: boolean;
       asideROpen: boolean;
     };
+
+    authProps: {
+      isSaveLastDocument: boolean;
+      isMenuPrincipalMini: boolean;
+    };
   }
 
   interface ILocation {
@@ -28,15 +33,26 @@ declare global {
     value?: T | null;
   }
 
-  type TTabView = "dashboard" | "map" | "editor" | "none" | "payments";
+  type TTabView =
+    | "dashboard"
+    | "map"
+    | "editor"
+    | "none"
+    | "payments"
+    | "test"
+    | "finantials_movements"
+    | "deliveries";
 
   type TTab = {
     id: string;
     title: string;
-    icon?: "home" | "code";
+    subtitle: string;
+    icon?: TTabView;
     pinned?: boolean;
     view: TTabView;
     props?: Record<string, unknown>;
+    showHeader?: boolean;
+    loading?: boolean;
   };
 
   interface ISideControl {
@@ -53,8 +69,8 @@ declare global {
     token?: string;
   }
   interface IDeviceRegister {
-		nr_registro: string;
-	}
+    nr_registro: string;
+  }
 
   interface IUserAuth extends IUser {
     vl_senha: string;
@@ -92,7 +108,6 @@ declare global {
     app: {
       title: string;
     };
-
     startup: {
       loading: true;
       message: string;
@@ -160,6 +175,18 @@ declare global {
       "jeza:log": { ds_log: string };
     } & {
       [key: `jeza:siginout_${string}`]: IWsParams["handleSignoutResponse"];
+    };
+  }
+  //------------
+  interface IMQTTParams {
+    handleSignoutResponse: {
+      ds_motivo: string;
+    };
+
+    mqttChannels: {
+      "jeza:log": { ds_log: string };
+    } & {
+      [key: `jeza:signout_${string}`]: IMQTTParams["handleSignoutResponse"];
     };
   }
   //------------
