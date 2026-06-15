@@ -54,6 +54,7 @@ declare global {
     showHeader?: boolean;
     loading?: boolean;
   };
+	
 
   interface ISideControl {
     isOpen: boolean;
