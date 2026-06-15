@@ -1,2 +1,2 @@
-export * from "./layouts";
+export * from "./layout";
 export * from "./contexts";

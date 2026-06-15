@@ -1,237 +1,221 @@
 import {
-  useStoreV1,
-  type ILayoutStore,
-  type TIdMenu,
-} from "@jeza-v2/core/data/zustand/zustand-storage.v1";
-
-import {
   createContext,
-  useCallback,
-  useEffect,
-  useMemo,
   type FC,
   type PropsWithChildren,
-  type ReactNode,
+  useEffect,
+  useMemo,
+  useReducer,
+  useState,
 } from "react";
+import {
+  createUpdateValue,
+  validateTokenExpiration,
+  getTokenExpiration,
+} from "@jeza-v2/core/utils/general.v1";
+import { sanitizeDocument } from "@jeza-v2/core/utils/documents.v1";
+import { apiMP } from "@jeza-v2/core/index";
+import { useStoreV1 } from "@jeza-v2/core/data/zustand/zustand-storage.v1";
+import { isApiError } from "@jeza-v2/core/services/http/typed-fetch.v2";
+import { usePersistentScheduler } from "@jeza-v2/core/schedules/schedule-control-time-context.v1";
 
-import { m, fmt } from "@jeza-v2/core/i18n/locale-i18n.v1";
+const defaultValue: IAppControl = {} as IAppControl;
+const MAppContext = createContext<IAppControl>(defaultValue);
 
-import { MdOutlineDashboard } from "react-icons/md";
-import { TfiLayoutSidebarNone } from "react-icons/tfi";
-import { BsPiggyBank, BsGear } from "react-icons/bs";
+type TFlux =
+  | "START"
+  | "VALIDATE_TOKEN"
+  | "REFRESH_TOKEN"
+  | "LOAD_USER"
+  | "ONLINE"
+  | "LOGOUT"
+  | "NO_TOKEN";
 
-export const APP_EVENTS = {
-  INACTIVE_RETURN: "app:inactive-return",
-} as const;
+type TAction =
+  | { type: "START" }
+  | { type: "VALIDATE_TOKEN" }
+  | { type: "REFRESH_TOKEN" }
+  | { type: "LOAD_USER" }
+  | { type: "ONLINE" }
+  | { type: "LOGOUT" }
+  | { type: "NO_TOKEN" };
 
-interface IMAppValues {
-  menu: ILayoutStore["menus"];
-  selectItem: (id: TIdMenu) => void;
-  changeAppState: (state: ILayoutStore["appState"]) => void;
-  getMenuItemIcon: (id: TIdMenu) => ReactNode;
+function fluxReducer(_: TFlux, action: TAction): TFlux {
+  switch (action.type) {
+    case "START":
+      return "START";
+    case "VALIDATE_TOKEN":
+      return "VALIDATE_TOKEN";
+    case "REFRESH_TOKEN":
+      return "REFRESH_TOKEN";
+    case "LOAD_USER":
+      return "LOAD_USER";
+    case "ONLINE":
+      return "ONLINE";
+    case "LOGOUT":
+      return "LOGOUT";
+    case "NO_TOKEN":
+      return "NO_TOKEN";
+    default:
+      return "START";
+  }
 }
 
-const defaultValue = {} as IMAppValues;
+const MAppProvider: FC<PropsWithChildren> = ({ children }) => {
+  const [value, setValue] = useState<IAppControl>(defaultValue);
+  const update = useMemo(() => createUpdateValue(setValue), []);
 
-export const MAppContext = createContext<IMAppValues>(defaultValue);
+  const [flux, dispatch] = useReducer(fluxReducer, "START");
 
-export const MAppProvider: FC<PropsWithChildren> = ({ children }) => {
-  const authStatus = useStoreV1((s) => s.authStatus);
-
+  const token = useStoreV1((s) => s.token);
+  const setToken = useStoreV1((s) => s.setToken);
   const setAppState = useStoreV1((s) => s.setAppState);
-  const setAppTitle = useStoreV1((s) => s.setAppTitle);
+  const dateTokenExp = useStoreV1((s) => s.dateTokenExp);
+  const setDateTokenExp = useStoreV1((s) => s.setDateTokenExp);
 
-  const menus = useStoreV1((s) => s.menus);
-  const setMenu = useStoreV1((s) => s.setMenu);
-
-  const tabs = useStoreV1((s) => s.tabs);
-  const setTabs = useStoreV1((s) => s.setTabs);
-
-  // --------------------------------------------------
-  // Menu
-  // --------------------------------------------------
-
-  useEffect(() => {
-    if (menus) return;
-
-    setMenu({
-      itens: [
-        {
-          id: "DASHBOARD",
-          title: m.menu_dashboard,
-          selected: true,
-          disabled: false,
-        },
-        {
-          id: "TRANSACTIONS",
-          title: m.menu_transactions,
-          selected: false,
-          disabled: false,
-        },
-        {
-          id: "PREFERENCES",
-          title: m.menu_settings,
-          selected: false,
-          disabled: false,
-        },
-      ],
-    });
-  }, [menus, setMenu]);
-
-  const selectItem = useCallback(
-    (id: TIdMenu) => {
-      if (!menus) return;
-
-      setMenu({
-        ...menus,
-        itens: menus.itens.map((item) => ({
-          ...item,
-          selected: item.id === id,
-        })),
-      });
+  /**
+   * Refresh automático
+   */
+  usePersistentScheduler({
+    nextDate: dateTokenExp,
+    onRun() {
+      dispatch({ type: "REFRESH_TOKEN" });
     },
-    [menus, setMenu],
-  );
+  });
 
-  // --------------------------------------------------
-  // Tabs
-  // --------------------------------------------------
-
+  /**
+   * Registra handlers apenas uma vez
+   */
   useEffect(() => {
-    if (tabs.length > 0) return;
+    update("handleLogin", async (documento, senha) => {
+      try {
+        update("userAuth", {
+          loading: true,
+        });
 
-    setTabs([
-      {
-        id: "dash",
-        title: m.menu_dashboard,
-        subtitle: m.menu_dashboard_subtitle,
-        view: "dashboard",
-        showHeader: true,
-        loading: false,
-        pinned: true,
-        icon: "dashboard",
-      },
-      {
-        id: "test",
-        title: "Teste",
-        subtitle: "text subtitle",
-        view: "deliveries",
-        showHeader: false,
-      },
-    ]);
-  }, [tabs, setTabs]);
+        const auth = await apiMP.post("/jeza/login", {
+          nr_cpfcnpj: sanitizeDocument(documento),
+          vl_senha: senha,
+        });
 
-  // --------------------------------------------------
-  // Auth State
-  // --------------------------------------------------
+        setToken(auth.ds_token);
 
-  useEffect(() => {
-    if (!authStatus) return;
+        dispatch({
+          type: "VALIDATE_TOKEN",
+        });
+      } catch (error) {
+        const message = isApiError(error) ? error.ds_mensagem : String(error);
 
-    switch (authStatus) {
-      case "AUTHORIZED":
-        setAppState("ON-LINE");
-        setAppTitle(fmt("title_app_online", m.text_geza_slogan));
-        break;
-
-      case "UNAUTHORIZED":
-        setAppState("SIGNIN");
-        setAppTitle(m.title_app_signin);
-        break;
-
-      case "UNREGISTERED":
-        setAppState("SCREENSHOT");
-        break;
-    }
-  }, [authStatus, setAppState, setAppTitle]);
-
-  // --------------------------------------------------
-  // Title
-  // --------------------------------------------------
-
-  useEffect(() => {
-    setAppTitle(`${m.text_appname} - ${m.text_geza_slogan}`);
-  }, [setAppTitle]);
-
-  // --------------------------------------------------
-  // Inactivity
-  // --------------------------------------------------
-
-  useEffect(() => {
-    const INACTIVITY_TIME = 5 * 60 * 1000;
-
-    let lastActivity = Date.now();
-
-    const updateActivity = () => {
-      lastActivity = Date.now();
-    };
-
-    const handleVisibilityChange = () => {
-      if (document.hidden) return;
-
-      const inactiveTime = Date.now() - lastActivity;
-
-      if (inactiveTime >= INACTIVITY_TIME) {
-        window.dispatchEvent(
-          new CustomEvent(APP_EVENTS.INACTIVE_RETURN, {
-            detail: { inactiveTime },
-          }),
-        );
+        update("userAuth", {
+          loading: false,
+          error: message,
+        });
       }
+    });
 
-      updateActivity();
-    };
+    update("handleLogout", () => {
+      dispatch({ type: "LOGOUT" });
+    });
+  }, [update, setToken]);
 
-    const events = [
-      "mousemove",
-      "mousedown",
-      "keydown",
-      "scroll",
-      "touchstart",
-    ] as const;
-
-    events.forEach((event) => window.addEventListener(event, updateActivity));
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-
-    return () => {
-      events.forEach((event) =>
-        window.removeEventListener(event, updateActivity),
-      );
-
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
+  /**
+   * Inicialização
+   */
+  useEffect(() => {
+    dispatch({ type: "VALIDATE_TOKEN" });
   }, []);
 
-  // --------------------------------------------------
-  // Helpers
-  // --------------------------------------------------
+  /**
+   * Máquina de estados
+   */
+  useEffect(() => {
+    const run = async () => {
+      try {
+        switch (flux) {
+          case "START":
+            break;
 
-  const getMenuItemIcon = useCallback((id: TIdMenu): ReactNode => {
-    switch (id) {
-      case "DASHBOARD":
-        return <MdOutlineDashboard />;
+          case "VALIDATE_TOKEN":
+            if (!token) {
+              dispatch({
+                type: "NO_TOKEN",
+              });
+              return;
+            }
+            if (!validateTokenExpiration(token)) {
+              dispatch({
+                type: "REFRESH_TOKEN",
+              });
+              return;
+            }
+            setDateTokenExp(getTokenExpiration(token));
+            dispatch({
+              type: "LOAD_USER",
+            });
+            break;
+          case "REFRESH_TOKEN": {
+            const refresh = await apiMP.post(
+              "/jeza/refresh",
+              undefined,
+              "include",
+            );
+            setToken(refresh.ds_token);
+            dispatch({
+              type: "VALIDATE_TOKEN",
+            });
+            break;
+          }
+          case "LOAD_USER": {
+            update("userAuth", {
+              loading: true,
+            });
+            const user = await apiMP.post("/jeza/user");
+            update("userAuth", {
+              loading: false,
+              value: user,
+            });
+            dispatch({
+              type: "ONLINE",
+            });
+            break;
+          }
+          case "ONLINE":
+            setAppState("ON-LINE");
+            break;
+          case "NO_TOKEN":
+            setDateTokenExp(null);
+            dispatch({
+              type: "LOGOUT",
+            });
+            break;
+          case "LOGOUT":
+            setToken(null);
+            setDateTokenExp(null);
 
-      case "TRANSACTIONS":
-        return <BsPiggyBank />;
+            update("userAuth", {
+              loading: false,
+            });
 
-      case "PREFERENCES":
-        return <BsGear />;
+            setAppState("SIGNIN");
+            break;
+        }
+      } catch (error) {
+        const message = isApiError(error) ? error.ds_mensagem : String(error);
 
-      default:
-        return <TfiLayoutSidebarNone />;
-    }
-  }, []);
+        update("userAuth", {
+          loading: false,
+          error: message,
+        });
 
-  const value = useMemo<IMAppValues>(
-    () => ({
-      menu: menus,
-      selectItem,
-      changeAppState: setAppState,
-      getMenuItemIcon,
-    }),
-    [menus, selectItem, setAppState, getMenuItemIcon],
-  );
+        dispatch({
+          type: "LOGOUT",
+        });
+      }
+    };
+
+    void run();
+  }, [flux, token, update, setToken, setAppState, setDateTokenExp]);
 
   return <MAppContext.Provider value={value}>{children}</MAppContext.Provider>;
 };
+
+export { MAppProvider, MAppContext };

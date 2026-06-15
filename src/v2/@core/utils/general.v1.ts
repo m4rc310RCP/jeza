@@ -1,4 +1,5 @@
 import type { Dispatch, SetStateAction } from "react";
+import { isAfter } from "date-fns";
 /******************************************************************************/
 type UpdateValueFunction<T> = <K extends keyof T>(
   key: K,
@@ -29,6 +30,13 @@ export const getTokenExpiration = (token: string): Date | null => {
     return null;
   }
 };
+
+export const validateTokenExpiration = (token: string): boolean => {
+  const now = new Date();
+  const exp = getTokenExpiration(token) ?? now;
+  return isAfter(exp, now);
+};
+
 /******************************************************************************/
 export const encodeJson = (value: unknown) => {
   return btoa(encodeURIComponent(JSON.stringify(value)));

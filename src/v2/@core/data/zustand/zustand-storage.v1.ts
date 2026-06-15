@@ -12,6 +12,12 @@ const decode = <T>(value: string): T => {
 // --------------------- encode/decode
 // ---------------------
 
+const createSide = (): ISideControl => ({
+  isOpen: false,
+  width: 240,
+  max: 600,
+});
+
 export type TIdMenu = "DASHBOARD" | "TRANSACTIONS" | "PREFERENCES";
 
 interface IMenuItem {
@@ -27,10 +33,17 @@ interface IMenu {
 
 export interface ILayoutStore {
   // ------------------------
+  sides: {
+    l: ISideControl;
+    r: ISideControl;
+  };
+  toggleSide: (side: "l" | "r") => void;
+  changeWidth: (side: "l" | "r", width: number) => void;
+  // ------------------------
   token: string | null;
   setToken: (token: ILayoutStore["token"]) => void;
   // ------------------------
-  appState: "ON-LINE" | "SIGNIN" | "SCREENSHOT";
+  appState: IAppState;
   setAppState: (appState: ILayoutStore["appState"]) => void;
   // ------------------------
   authStatus:
@@ -136,6 +149,30 @@ export const useStoreV1 = create<ILayoutStore>()(
       setSelectedMenuItem(selectedMenuItem) {
         set({ selectedMenuItem });
       },
+      sides: {
+        l: createSide(),
+        r: createSide(),
+      },
+      toggleSide: (side) =>
+        set((state) => ({
+          sides: {
+            ...state.sides,
+            [side]: {
+              ...state.sides[side],
+              isOpen: !state.sides[side].isOpen,
+            },
+          },
+        })),
+      changeWidth: (side, width) =>
+        set((state) => ({
+          sides: {
+            ...state.sides,
+            [side]: {
+              ...state.sides[side],
+              width,
+            },
+          },
+        })),
     }),
     {
       name: "_jeza_v1_hash_",

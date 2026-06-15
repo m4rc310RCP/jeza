@@ -27,6 +27,13 @@ declare global {
   //   value?: T | null;
   // }
 
+  // Componenr's --~>
+  interface ISideControl {
+    isOpen: boolean;
+    width: number;
+    max: number;
+  }
+
   interface IAwaitValue<T, E = TypedFetchError> {
     loading: boolean;
     error?: E | null;
@@ -54,6 +61,17 @@ declare global {
     showHeader?: boolean;
     loading?: boolean;
   };
+
+	interface IIconControl{
+		makeIcon: (id: TTabView) => ReactNode;
+	}
+
+	interface ITabControl {
+		createTab: (tab:TTab) => void;
+		closeTab: (e: React.MouseEvent<HTMLButtonElement>, id: string) => void;
+		makeIcon: IIconControl['makeIcon'];
+		rendererTab: (tab:TTab) => ReactNode
+	}
 
   interface ISideControl {
     isOpen: boolean;
@@ -131,21 +149,21 @@ declare global {
       { id_local: string; nm_local: string }[]
     >;
 
-    "/geza/signin": IRouteRef<
+    "/jeza/login": IRouteRef<
       "POST",
       { nr_cpfcnpj: string; vl_senha: string },
       { ds_token: string; tp_token: "Bearer" }
     >;
 
-    "/geza/refresh": IRouteRef<
+    "/jeza/refresh": IRouteRef<
       "POST",
       undefined,
       { ds_token: string; tp_token: "Bearer" }
     >;
 
-    "/geza/test": IRouteRef<"POST", undefined, { in_valido: boolean }>;
+    "/jeza/test": IRouteRef<"POST", undefined, { in_valido: boolean }>;
 
-    "/geza/user": IRouteRef<"POST", undefined, IUserAuth>;
+    "/jeza/user": IRouteRef<"POST", undefined, IUserAuth>;
     "/jeza/app/register": IRouteRef<"POST", IDeviceRegister, undefined>;
     // "/mp/pix": IRouteRef<"POST", IPayPix["request"], IPayPix["response"]>;
   }
@@ -188,6 +206,18 @@ declare global {
     } & {
       [key: `jeza:signout_${string}`]: IMQTTParams["handleSignoutResponse"];
     };
+  }
+  //------------
+  type IAppState = "ON-LINE" | "TOKEN-EXPIRED" | "SIGNIN" | "SCREENSHOT";
+
+  interface IAppControl {
+    //--~> Function's
+    handleLogin: (document: string, password: string) => void;
+    handleLogout: () => void;
+    // Function's <~--
+    //--~> Loader's
+    userAuth: IAwaitValue<IUserAuth>;
+    // Loader's <~--
   }
   //------------
 }

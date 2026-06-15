@@ -10,5 +10,9 @@
   "menu_transactions": "Transações",
   "menu_settings": "Configurações",
   "title_app_online": "JℇZ𝛂 - {0}",
-  "title_app_signin": "JℇZ𝛂 - Autenticar"
+  "text_save_document": "Lembrar CPF/CNPJ",
+  "text_signin": "Login",
+  "text_close": "Sair",
+  "title_app_signin": "JℇZ𝛂 - Autenticar",
+  "error_refresh_token_expired": "Sua sessão expirou por motivos de segurança. Faça login novamente para continuar."
 }
