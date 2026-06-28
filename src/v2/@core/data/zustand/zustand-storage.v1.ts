@@ -66,6 +66,9 @@ export interface ILayoutStore {
   user: IUserAuth | null;
   setUser: (user: ILayoutStore["user"]) => void;
   // ---	---------------------
+  userBalance: IUserBalance | null;
+  setUserBalance: (userBalance: ILayoutStore["userBalance"]) => void;
+  // ---	---------------------
   lastDocument: string | null;
   setLastDocument: (lastDocument: ILayoutStore["lastDocument"]) => void;
   // ---	---------------------
@@ -86,17 +89,26 @@ export interface ILayoutStore {
   tab: TTab | null;
   setTab: (tab: ILayoutStore["tab"]) => void;
   // ---	---------------------
+  weatherCurrent: TWeather | null;
+  setWeatherCurrent: (weatherCurrent: ILayoutStore["weatherCurrent"]) => void;
+  dateUpdateWeather: Date | null;
+  setDateUpdateWeather: (
+    dateUpdateWeather: ILayoutStore["dateUpdateWeather"],
+  ) => void;
+  // ---	---------------------
 }
 
 export const useStoreV1 = create<ILayoutStore>()(
   persist(
     (set) => ({
-      token: null,
+      token: "",
       setToken(token) {
+        //console.trace("[SET TOKEN]", token);
         set({ token });
       },
       appState: "SCREENSHOT",
       setAppState(appState) {
+        //console.trace("[SET APP STATE]", appState);
         set({ appState });
       },
       registerId: null,
@@ -116,7 +128,12 @@ export const useStoreV1 = create<ILayoutStore>()(
       },
       user: null,
       setUser(user) {
+        //console.trace("[SET USER]", user);
         set({ user });
+      },
+      userBalance: null,
+      setUserBalance(userBalance) {
+        set({ userBalance });
       },
       lastDocument: null,
       setLastDocument(lastDocument) {
@@ -125,6 +142,7 @@ export const useStoreV1 = create<ILayoutStore>()(
       layoutPropsAuth: {
         isSaveLastDocument: false,
         isMenuPrincipalMini: false,
+        showDashboardValue: true,
       },
       setLayoutPropsAuth(layoutPropsAuth) {
         set({ layoutPropsAuth });
@@ -173,9 +191,24 @@ export const useStoreV1 = create<ILayoutStore>()(
             },
           },
         })),
+      weatherCurrent: null,
+      setWeatherCurrent(weatherCurrent) {
+        set({ weatherCurrent });
+      },
+      dateUpdateWeather: null,
+      setDateUpdateWeather(dateUpdateWeather) {
+        set({ dateUpdateWeather });
+      },
     }),
     {
       name: "_jeza_v1_hash_",
+      onRehydrateStorage: () => {
+        //console.log("[REHYDRATE] start");
+
+        return (state) => {
+          //console.log("[REHYDRATE] finish", state);
+        };
+      },
       storage: createJSONStorage(() => ({
         getItem(name) {
           const value = localStorage.getItem(name);
@@ -183,6 +216,7 @@ export const useStoreV1 = create<ILayoutStore>()(
           return decode(value);
         },
         setItem(name, value) {
+          //console.log("[STORAGE SAVE]", value);
           localStorage.setItem(name, encode(value));
         },
 

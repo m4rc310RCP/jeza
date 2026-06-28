@@ -1,0 +1,2069 @@
+{
+  "nr_latitude": -24.02447614631186,
+  "nr_longitude": -52.363816403227176,
+  "tp_clima": "ALL",
+  "in_climacache": false,
+  "oc_geo": {
+    "nm_cidade": "Campo Mourão",
+    "nr_latitude": -24.046329,
+    "nr_longitude": -52.37802,
+    "nm_pais": "BR",
+    "nm_estado": "Paraná",
+    "in_geocache": false
+  },
+  "oc_atual": {
+    "dt_clima": "2026-06-20T15:49:57.000Z",
+    "dt_nascersol": "2026-06-20T10:11:32.000Z",
+    "dt_porsol": "2026-06-20T20:50:28.000Z",
+    "qt_temperatura": 16.13,
+    "qt_senstermica": 15.89,
+    "qt_pressao": 1015,
+    "qt_umidade": 80,
+    "qt_pontoconden": 12.68,
+    "qt_uva": 4.54,
+    "pe_nuvens": 82,
+    "qt_visibilidade": 10000,
+    "vl_vento": 2.52,
+    "vl_rajvento": 4.02,
+    "an_vento": 238,
+    "ls_clima": [
+      {
+        "id_clima": 803,
+        "cd_climapred": "Clouds",
+        "ds_clima": "nublado",
+        "cd_icone": "04d"
+      }
+    ]
+  },
+  "ls_minutos": [
+    {
+      "nr_ordem": 1,
+      "dt_clima": "2026-06-20T15:50:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 2,
+      "dt_clima": "2026-06-20T15:51:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 3,
+      "dt_clima": "2026-06-20T15:52:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 4,
+      "dt_clima": "2026-06-20T15:53:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 5,
+      "dt_clima": "2026-06-20T15:54:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 6,
+      "dt_clima": "2026-06-20T15:55:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 7,
+      "dt_clima": "2026-06-20T15:56:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 8,
+      "dt_clima": "2026-06-20T15:57:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 9,
+      "dt_clima": "2026-06-20T15:58:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 10,
+      "dt_clima": "2026-06-20T15:59:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 11,
+      "dt_clima": "2026-06-20T16:00:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 12,
+      "dt_clima": "2026-06-20T16:01:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 13,
+      "dt_clima": "2026-06-20T16:02:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 14,
+      "dt_clima": "2026-06-20T16:03:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 15,
+      "dt_clima": "2026-06-20T16:04:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 16,
+      "dt_clima": "2026-06-20T16:05:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 17,
+      "dt_clima": "2026-06-20T16:06:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 18,
+      "dt_clima": "2026-06-20T16:07:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 19,
+      "dt_clima": "2026-06-20T16:08:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 20,
+      "dt_clima": "2026-06-20T16:09:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 21,
+      "dt_clima": "2026-06-20T16:10:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 22,
+      "dt_clima": "2026-06-20T16:11:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 23,
+      "dt_clima": "2026-06-20T16:12:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 24,
+      "dt_clima": "2026-06-20T16:13:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 25,
+      "dt_clima": "2026-06-20T16:14:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 26,
+      "dt_clima": "2026-06-20T16:15:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 27,
+      "dt_clima": "2026-06-20T16:16:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 28,
+      "dt_clima": "2026-06-20T16:17:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 29,
+      "dt_clima": "2026-06-20T16:18:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 30,
+      "dt_clima": "2026-06-20T16:19:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 31,
+      "dt_clima": "2026-06-20T16:20:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 32,
+      "dt_clima": "2026-06-20T16:21:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 33,
+      "dt_clima": "2026-06-20T16:22:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 34,
+      "dt_clima": "2026-06-20T16:23:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 35,
+      "dt_clima": "2026-06-20T16:24:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 36,
+      "dt_clima": "2026-06-20T16:25:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 37,
+      "dt_clima": "2026-06-20T16:26:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 38,
+      "dt_clima": "2026-06-20T16:27:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 39,
+      "dt_clima": "2026-06-20T16:28:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 40,
+      "dt_clima": "2026-06-20T16:29:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 41,
+      "dt_clima": "2026-06-20T16:30:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 42,
+      "dt_clima": "2026-06-20T16:31:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 43,
+      "dt_clima": "2026-06-20T16:32:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 44,
+      "dt_clima": "2026-06-20T16:33:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 45,
+      "dt_clima": "2026-06-20T16:34:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 46,
+      "dt_clima": "2026-06-20T16:35:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 47,
+      "dt_clima": "2026-06-20T16:36:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 48,
+      "dt_clima": "2026-06-20T16:37:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 49,
+      "dt_clima": "2026-06-20T16:38:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 50,
+      "dt_clima": "2026-06-20T16:39:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 51,
+      "dt_clima": "2026-06-20T16:40:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 52,
+      "dt_clima": "2026-06-20T16:41:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 53,
+      "dt_clima": "2026-06-20T16:42:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 54,
+      "dt_clima": "2026-06-20T16:43:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 55,
+      "dt_clima": "2026-06-20T16:44:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 56,
+      "dt_clima": "2026-06-20T16:45:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 57,
+      "dt_clima": "2026-06-20T16:46:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 58,
+      "dt_clima": "2026-06-20T16:47:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 59,
+      "dt_clima": "2026-06-20T16:48:00.000Z",
+      "qt_chuva": 0
+    },
+    {
+      "nr_ordem": 60,
+      "dt_clima": "2026-06-20T16:49:00.000Z",
+      "qt_chuva": 0
+    }
+  ],
+  "oc_horas": [
+    {
+      "nr_ordem": 1,
+      "dt_clima": "2026-06-20T15:00:00.000Z",
+      "qt_temperatura": 15.71,
+      "qt_senstermica": 15.5,
+      "qt_umidade": 83,
+      "qt_pontorvalho": 12.83,
+      "qt_uv": 2.02,
+      "qt_nuvend": 85,
+      "qt_visibilidade": 10000,
+      "vl_vento": 1.99,
+      "vl_rajvento": 3.95,
+      "an_vento": 221,
+      "pe_probchuva": 80,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 804,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "nublado",
+          "cd_icone": "04d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 2,
+      "dt_clima": "2026-06-20T16:00:00.000Z",
+      "qt_temperatura": 16.13,
+      "qt_senstermica": 15.89,
+      "qt_umidade": 80,
+      "qt_pontorvalho": 12.68,
+      "qt_uv": 4.54,
+      "qt_nuvend": 82,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.52,
+      "vl_rajvento": 4.02,
+      "an_vento": 238,
+      "pe_probchuva": 80,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 803,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "nublado",
+          "cd_icone": "04d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 3,
+      "dt_clima": "2026-06-20T17:00:00.000Z",
+      "qt_temperatura": 16.29,
+      "qt_senstermica": 16.01,
+      "qt_umidade": 78,
+      "qt_pontorvalho": 12.45,
+      "qt_uv": 3.48,
+      "qt_nuvend": 81,
+      "qt_visibilidade": 10000,
+      "vl_vento": 3.36,
+      "vl_rajvento": 5.76,
+      "an_vento": 264,
+      "pe_probchuva": 80,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 803,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "nublado",
+          "cd_icone": "04d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 4,
+      "dt_clima": "2026-06-20T18:00:00.000Z",
+      "qt_temperatura": 16.59,
+      "qt_senstermica": 16.26,
+      "qt_umidade": 75,
+      "qt_pontorvalho": 12.15,
+      "qt_uv": 2.37,
+      "qt_nuvend": 78,
+      "qt_visibilidade": 10000,
+      "vl_vento": 4.43,
+      "vl_rajvento": 6.66,
+      "an_vento": 275,
+      "pe_probchuva": 80,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 803,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "nublado",
+          "cd_icone": "04d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 5,
+      "dt_clima": "2026-06-20T19:00:00.000Z",
+      "qt_temperatura": 16.56,
+      "qt_senstermica": 16.26,
+      "qt_umidade": 76,
+      "qt_pontorvalho": 12.32,
+      "qt_uv": 0.97,
+      "qt_nuvend": 42,
+      "qt_visibilidade": 10000,
+      "vl_vento": 4.17,
+      "vl_rajvento": 5.88,
+      "an_vento": 273,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 802,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "nuvens dispersas",
+          "cd_icone": "03d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 6,
+      "dt_clima": "2026-06-20T20:00:00.000Z",
+      "qt_temperatura": 15.41,
+      "qt_senstermica": 15.12,
+      "qt_umidade": 81,
+      "qt_pontorvalho": 12.17,
+      "qt_uv": 0.13,
+      "qt_nuvend": 19,
+      "qt_visibilidade": 10000,
+      "vl_vento": 3.76,
+      "vl_rajvento": 7.22,
+      "an_vento": 268,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 801,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "algumas nuvens",
+          "cd_icone": "02d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 7,
+      "dt_clima": "2026-06-20T21:00:00.000Z",
+      "qt_temperatura": 12.59,
+      "qt_senstermica": 12.25,
+      "qt_umidade": 90,
+      "qt_pontorvalho": 10.93,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.26,
+      "vl_rajvento": 2.71,
+      "an_vento": 268,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 8,
+      "dt_clima": "2026-06-20T22:00:00.000Z",
+      "qt_temperatura": 11.6,
+      "qt_senstermica": 11.24,
+      "qt_umidade": 93,
+      "qt_pontorvalho": 10.42,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 1.94,
+      "vl_rajvento": 1.89,
+      "an_vento": 271,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 9,
+      "dt_clima": "2026-06-20T23:00:00.000Z",
+      "qt_temperatura": 11.06,
+      "qt_senstermica": 10.65,
+      "qt_umidade": 93,
+      "qt_pontorvalho": 9.95,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 1.54,
+      "vl_rajvento": 1.52,
+      "an_vento": 252,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 10,
+      "dt_clima": "2026-06-21T00:00:00.000Z",
+      "qt_temperatura": 10.76,
+      "qt_senstermica": 10.35,
+      "qt_umidade": 94,
+      "qt_pontorvalho": 9.79,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 1.88,
+      "vl_rajvento": 1.87,
+      "an_vento": 249,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 11,
+      "dt_clima": "2026-06-21T01:00:00.000Z",
+      "qt_temperatura": 10.47,
+      "qt_senstermica": 10.03,
+      "qt_umidade": 94,
+      "qt_pontorvalho": 9.62,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.08,
+      "vl_rajvento": 2.05,
+      "an_vento": 233,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 12,
+      "dt_clima": "2026-06-21T02:00:00.000Z",
+      "qt_temperatura": 10.28,
+      "qt_senstermica": 9.84,
+      "qt_umidade": 95,
+      "qt_pontorvalho": 9.42,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.04,
+      "vl_rajvento": 1.95,
+      "an_vento": 232,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 13,
+      "dt_clima": "2026-06-21T03:00:00.000Z",
+      "qt_temperatura": 9.97,
+      "qt_senstermica": 9.5,
+      "qt_umidade": 94,
+      "qt_pontorvalho": 9.07,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 1.61,
+      "vl_rajvento": 1.56,
+      "an_vento": 221,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 14,
+      "dt_clima": "2026-06-21T04:00:00.000Z",
+      "qt_temperatura": 9.62,
+      "qt_senstermica": 9.62,
+      "qt_umidade": 94,
+      "qt_pontorvalho": 8.74,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 1.2,
+      "vl_rajvento": 1.14,
+      "an_vento": 198,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 15,
+      "dt_clima": "2026-06-21T05:00:00.000Z",
+      "qt_temperatura": 9.42,
+      "qt_senstermica": 9.14,
+      "qt_umidade": 95,
+      "qt_pontorvalho": 8.57,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 1.36,
+      "vl_rajvento": 1.26,
+      "an_vento": 144,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 16,
+      "dt_clima": "2026-06-21T06:00:00.000Z",
+      "qt_temperatura": 8.92,
+      "qt_senstermica": 8.92,
+      "qt_umidade": 95,
+      "qt_pontorvalho": 8.15,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 1.2,
+      "vl_rajvento": 1.12,
+      "an_vento": 116,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 17,
+      "dt_clima": "2026-06-21T07:00:00.000Z",
+      "qt_temperatura": 8.47,
+      "qt_senstermica": 8.08,
+      "qt_umidade": 96,
+      "qt_pontorvalho": 7.84,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 1.35,
+      "vl_rajvento": 1.38,
+      "an_vento": 94,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 18,
+      "dt_clima": "2026-06-21T08:00:00.000Z",
+      "qt_temperatura": 8.18,
+      "qt_senstermica": 7.57,
+      "qt_umidade": 96,
+      "qt_pontorvalho": 7.68,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 1.5,
+      "vl_rajvento": 1.52,
+      "an_vento": 103,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 19,
+      "dt_clima": "2026-06-21T09:00:00.000Z",
+      "qt_temperatura": 7.99,
+      "qt_senstermica": 7.28,
+      "qt_umidade": 97,
+      "qt_pontorvalho": 7.53,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 1.57,
+      "vl_rajvento": 1.54,
+      "an_vento": 93,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 20,
+      "dt_clima": "2026-06-21T10:00:00.000Z",
+      "qt_temperatura": 7.85,
+      "qt_senstermica": 7.28,
+      "qt_umidade": 97,
+      "qt_pontorvalho": 7.37,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 1.43,
+      "vl_rajvento": 1.33,
+      "an_vento": 88,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 21,
+      "dt_clima": "2026-06-21T11:00:00.000Z",
+      "qt_temperatura": 8.76,
+      "qt_senstermica": 7.88,
+      "qt_umidade": 97,
+      "qt_pontorvalho": 8.33,
+      "qt_uv": 0.28,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 1.85,
+      "vl_rajvento": 2.71,
+      "an_vento": 85,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 22,
+      "dt_clima": "2026-06-21T12:00:00.000Z",
+      "qt_temperatura": 11.31,
+      "qt_senstermica": 10.9,
+      "qt_umidade": 92,
+      "qt_pontorvalho": 9.98,
+      "qt_uv": 1.19,
+      "qt_nuvend": 1,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.39,
+      "vl_rajvento": 3.92,
+      "an_vento": 75,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 23,
+      "dt_clima": "2026-06-21T13:00:00.000Z",
+      "qt_temperatura": 13.35,
+      "qt_senstermica": 12.96,
+      "qt_umidade": 85,
+      "qt_pontorvalho": 10.74,
+      "qt_uv": 2.75,
+      "qt_nuvend": 24,
+      "qt_visibilidade": 10000,
+      "vl_vento": 3.03,
+      "vl_rajvento": 4.36,
+      "an_vento": 69,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 801,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "algumas nuvens",
+          "cd_icone": "02d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 24,
+      "dt_clima": "2026-06-21T14:00:00.000Z",
+      "qt_temperatura": 15.25,
+      "qt_senstermica": 14.76,
+      "qt_umidade": 74,
+      "qt_pontorvalho": 10.64,
+      "qt_uv": 4.43,
+      "qt_nuvend": 12,
+      "qt_visibilidade": 10000,
+      "vl_vento": 3.1,
+      "vl_rajvento": 4.17,
+      "an_vento": 64,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 801,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "algumas nuvens",
+          "cd_icone": "02d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 25,
+      "dt_clima": "2026-06-21T15:00:00.000Z",
+      "qt_temperatura": 16.64,
+      "qt_senstermica": 16.08,
+      "qt_umidade": 66,
+      "qt_pontorvalho": 10.25,
+      "qt_uv": 5.49,
+      "qt_nuvend": 8,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.96,
+      "vl_rajvento": 3.73,
+      "an_vento": 48,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 26,
+      "dt_clima": "2026-06-21T16:00:00.000Z",
+      "qt_temperatura": 17.58,
+      "qt_senstermica": 17.01,
+      "qt_umidade": 62,
+      "qt_pontorvalho": 10.15,
+      "qt_uv": 5.53,
+      "qt_nuvend": 6,
+      "qt_visibilidade": 10000,
+      "vl_vento": 3.2,
+      "vl_rajvento": 3.97,
+      "an_vento": 43,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 27,
+      "dt_clima": "2026-06-21T17:00:00.000Z",
+      "qt_temperatura": 18.1,
+      "qt_senstermica": 17.53,
+      "qt_umidade": 60,
+      "qt_pontorvalho": 10.19,
+      "qt_uv": 4.43,
+      "qt_nuvend": 5,
+      "qt_visibilidade": 10000,
+      "vl_vento": 3.06,
+      "vl_rajvento": 3.84,
+      "an_vento": 41,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 28,
+      "dt_clima": "2026-06-21T18:00:00.000Z",
+      "qt_temperatura": 18.16,
+      "qt_senstermica": 17.6,
+      "qt_umidade": 60,
+      "qt_pontorvalho": 10.48,
+      "qt_uv": 2.71,
+      "qt_nuvend": 4,
+      "qt_visibilidade": 10000,
+      "vl_vento": 3.11,
+      "vl_rajvento": 3.98,
+      "an_vento": 43,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 29,
+      "dt_clima": "2026-06-21T19:00:00.000Z",
+      "qt_temperatura": 17.91,
+      "qt_senstermica": 17.51,
+      "qt_umidade": 67,
+      "qt_pontorvalho": 11.76,
+      "qt_uv": 1.14,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.79,
+      "vl_rajvento": 4.58,
+      "an_vento": 53,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 30,
+      "dt_clima": "2026-06-21T20:00:00.000Z",
+      "qt_temperatura": 16.17,
+      "qt_senstermica": 15.83,
+      "qt_umidade": 76,
+      "qt_pontorvalho": 11.99,
+      "qt_uv": 0.27,
+      "qt_nuvend": 2,
+      "qt_visibilidade": 10000,
+      "vl_vento": 3.41,
+      "vl_rajvento": 6.43,
+      "an_vento": 62,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 31,
+      "dt_clima": "2026-06-21T21:00:00.000Z",
+      "qt_temperatura": 13.51,
+      "qt_senstermica": 13.08,
+      "qt_umidade": 83,
+      "qt_pontorvalho": 10.75,
+      "qt_uv": 0,
+      "qt_nuvend": 2,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.69,
+      "vl_rajvento": 4.07,
+      "an_vento": 63,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 32,
+      "dt_clima": "2026-06-21T22:00:00.000Z",
+      "qt_temperatura": 12.99,
+      "qt_senstermica": 12.54,
+      "qt_umidade": 84,
+      "qt_pontorvalho": 10.34,
+      "qt_uv": 0,
+      "qt_nuvend": 24,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.46,
+      "vl_rajvento": 4.46,
+      "an_vento": 65,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 801,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "algumas nuvens",
+          "cd_icone": "02n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 33,
+      "dt_clima": "2026-06-21T23:00:00.000Z",
+      "qt_temperatura": 12.51,
+      "qt_senstermica": 12.11,
+      "qt_umidade": 88,
+      "qt_pontorvalho": 10.54,
+      "qt_uv": 0,
+      "qt_nuvend": 25,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.52,
+      "vl_rajvento": 4.9,
+      "an_vento": 68,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 802,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "nuvens dispersas",
+          "cd_icone": "03n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 34,
+      "dt_clima": "2026-06-22T00:00:00.000Z",
+      "qt_temperatura": 11.92,
+      "qt_senstermica": 11.6,
+      "qt_umidade": 93,
+      "qt_pontorvalho": 10.77,
+      "qt_uv": 0,
+      "qt_nuvend": 21,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.79,
+      "vl_rajvento": 5.53,
+      "an_vento": 71,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 801,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "algumas nuvens",
+          "cd_icone": "02n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 35,
+      "dt_clima": "2026-06-22T01:00:00.000Z",
+      "qt_temperatura": 11.65,
+      "qt_senstermica": 11.33,
+      "qt_umidade": 94,
+      "qt_pontorvalho": 10.64,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.7,
+      "vl_rajvento": 5.6,
+      "an_vento": 81,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 36,
+      "dt_clima": "2026-06-22T02:00:00.000Z",
+      "qt_temperatura": 11.33,
+      "qt_senstermica": 10.92,
+      "qt_umidade": 92,
+      "qt_pontorvalho": 10.07,
+      "qt_uv": 0,
+      "qt_nuvend": 3,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.51,
+      "vl_rajvento": 5.26,
+      "an_vento": 88,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 37,
+      "dt_clima": "2026-06-22T03:00:00.000Z",
+      "qt_temperatura": 11.24,
+      "qt_senstermica": 10.8,
+      "qt_umidade": 91,
+      "qt_pontorvalho": 9.76,
+      "qt_uv": 0,
+      "qt_nuvend": 13,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.81,
+      "vl_rajvento": 5.71,
+      "an_vento": 96,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 801,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "algumas nuvens",
+          "cd_icone": "02n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 38,
+      "dt_clima": "2026-06-22T04:00:00.000Z",
+      "qt_temperatura": 11.16,
+      "qt_senstermica": 10.68,
+      "qt_umidade": 90,
+      "qt_pontorvalho": 9.57,
+      "qt_uv": 0,
+      "qt_nuvend": 10,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.78,
+      "vl_rajvento": 4.85,
+      "an_vento": 101,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 39,
+      "dt_clima": "2026-06-22T05:00:00.000Z",
+      "qt_temperatura": 11.25,
+      "qt_senstermica": 10.75,
+      "qt_umidade": 89,
+      "qt_pontorvalho": 9.43,
+      "qt_uv": 0,
+      "qt_nuvend": 8,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.74,
+      "vl_rajvento": 4.27,
+      "an_vento": 100,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 40,
+      "dt_clima": "2026-06-22T06:00:00.000Z",
+      "qt_temperatura": 11.39,
+      "qt_senstermica": 10.83,
+      "qt_umidade": 86,
+      "qt_pontorvalho": 9.24,
+      "qt_uv": 0,
+      "qt_nuvend": 7,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.53,
+      "vl_rajvento": 4.07,
+      "an_vento": 100,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 41,
+      "dt_clima": "2026-06-22T07:00:00.000Z",
+      "qt_temperatura": 11.33,
+      "qt_senstermica": 10.74,
+      "qt_umidade": 85,
+      "qt_pontorvalho": 8.95,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.18,
+      "vl_rajvento": 3.67,
+      "an_vento": 100,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 42,
+      "dt_clima": "2026-06-22T08:00:00.000Z",
+      "qt_temperatura": 11.46,
+      "qt_senstermica": 10.88,
+      "qt_umidade": 85,
+      "qt_pontorvalho": 8.92,
+      "qt_uv": 0,
+      "qt_nuvend": 2,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.23,
+      "vl_rajvento": 3.87,
+      "an_vento": 88,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 43,
+      "dt_clima": "2026-06-22T09:00:00.000Z",
+      "qt_temperatura": 11.39,
+      "qt_senstermica": 10.8,
+      "qt_umidade": 85,
+      "qt_pontorvalho": 8.96,
+      "qt_uv": 0,
+      "qt_nuvend": 1,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.41,
+      "vl_rajvento": 5.72,
+      "an_vento": 86,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 44,
+      "dt_clima": "2026-06-22T10:00:00.000Z",
+      "qt_temperatura": 11.47,
+      "qt_senstermica": 10.92,
+      "qt_umidade": 86,
+      "qt_pontorvalho": 9.29,
+      "qt_uv": 0,
+      "qt_nuvend": 0,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.18,
+      "vl_rajvento": 5.81,
+      "an_vento": 76,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01n"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 45,
+      "dt_clima": "2026-06-22T11:00:00.000Z",
+      "qt_temperatura": 12.4,
+      "qt_senstermica": 11.92,
+      "qt_umidade": 85,
+      "qt_pontorvalho": 9.92,
+      "qt_uv": 0.28,
+      "qt_nuvend": 2,
+      "qt_visibilidade": 10000,
+      "vl_vento": 2.54,
+      "vl_rajvento": 7.39,
+      "an_vento": 71,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 46,
+      "dt_clima": "2026-06-22T12:00:00.000Z",
+      "qt_temperatura": 14.9,
+      "qt_senstermica": 14.48,
+      "qt_umidade": 78,
+      "qt_pontorvalho": 11.2,
+      "qt_uv": 1.19,
+      "qt_nuvend": 5,
+      "qt_visibilidade": 10000,
+      "vl_vento": 3.06,
+      "vl_rajvento": 13.33,
+      "an_vento": 43,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 47,
+      "dt_clima": "2026-06-22T13:00:00.000Z",
+      "qt_temperatura": 17.2,
+      "qt_senstermica": 16.91,
+      "qt_umidade": 74,
+      "qt_pontorvalho": 12.61,
+      "qt_uv": 2.63,
+      "qt_nuvend": 7,
+      "qt_visibilidade": 10000,
+      "vl_vento": 5,
+      "vl_rajvento": 15.18,
+      "an_vento": 25,
+      "pe_probchuva": 0,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ]
+    },
+    {
+      "nr_ordem": 48,
+      "dt_clima": "2026-06-22T14:00:00.000Z",
+      "qt_temperatura": 18.63,
+      "qt_senstermica": 18.51,
+      "qt_umidade": 75,
+      "qt_pontorvalho": 14.18,
+      "qt_uv": 4.43,
+      "qt_nuvend": 10,
+      "qt_visibilidade": 10000,
+      "vl_vento": 5.96,
+      "vl_rajvento": 15.76,
+      "an_vento": 12,
+      "pe_probchuva": 12,
+      "vm_chuva1h": {
+        "1h": 0
+      },
+      "vm_neve1h": {
+        "1h": 0
+      },
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ]
+    }
+  ],
+  "ls_dias": [
+    {
+      "nr_ordem": 1,
+      "dt_clima": "2026-06-20T15:00:00.000Z",
+      "ds_sumario": "Expect a day of partly cloudy with rain",
+      "dt_nascersol": "2026-06-20T10:11:32.000Z",
+      "dt_porsol": "2026-06-20T20:50:28.000Z",
+      "dt_nascerlua": "2026-06-20T14:43:00.000Z",
+      "dt_porlua": "2026-06-21T02:49:00.000Z",
+      "fs_lua": 0.21,
+      "oc_temperatura": {
+        "qt_tempdia": 15.71,
+        "qt_tempmin": 10.28,
+        "qt_tempmax": 16.59,
+        "qt_tempnoite": 10.28,
+        "qt_tempvesp": 12.59
+      },
+      "oc_senstermica": {
+        "qt_tempdia": 15.5,
+        "qt_tempnoite": 9.84,
+        "qt_tempvesp": 12.25,
+        "qt_tempmanha": 12.8
+      },
+      "qt_pressao": 1015,
+      "qt_umidade": 83,
+      "qt_pontorvalho": 12.83,
+      "qt_nuvend": 85,
+      "vl_vento": 4.43,
+      "vl_rajvento": 9,
+      "an_vento": 275,
+      "oc_clima": [
+        {
+          "id_clima": 502,
+          "ds_climapredo": "Rain",
+          "ds_clima": "chuva forte",
+          "cd_icone": "10d"
+        }
+      ],
+      "pe_probchuva": 100,
+      "qt_chuva": 10.98,
+      "qt_uv": 4.54
+    },
+    {
+      "nr_ordem": 2,
+      "dt_clima": "2026-06-21T15:00:00.000Z",
+      "ds_sumario": "Expect a day of partly cloudy with clear spells",
+      "dt_nascersol": "2026-06-21T10:11:45.000Z",
+      "dt_porsol": "2026-06-21T20:50:40.000Z",
+      "dt_nascerlua": "2026-06-21T15:15:00.000Z",
+      "dt_porlua": "1970-01-01T00:00:00.000Z",
+      "fs_lua": 0.25,
+      "oc_temperatura": {
+        "qt_tempdia": 16.64,
+        "qt_tempmin": 7.85,
+        "qt_tempmax": 18.16,
+        "qt_tempnoite": 11.33,
+        "qt_tempvesp": 13.51
+      },
+      "oc_senstermica": {
+        "qt_tempdia": 16.08,
+        "qt_tempnoite": 10.92,
+        "qt_tempvesp": 13.08,
+        "qt_tempmanha": 7.28
+      },
+      "qt_pressao": 1018,
+      "qt_umidade": 66,
+      "qt_pontorvalho": 10.25,
+      "qt_nuvend": 8,
+      "vl_vento": 3.41,
+      "vl_rajvento": 6.43,
+      "an_vento": 62,
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ],
+      "pe_probchuva": 0,
+      "qt_uv": 5.53
+    },
+    {
+      "nr_ordem": 3,
+      "dt_clima": "2026-06-22T15:00:00.000Z",
+      "ds_sumario": "Expect a day of partly cloudy with rain",
+      "dt_nascersol": "2026-06-22T10:11:56.000Z",
+      "dt_porsol": "2026-06-22T20:50:52.000Z",
+      "dt_nascerlua": "2026-06-22T15:46:00.000Z",
+      "dt_porlua": "2026-06-22T03:43:00.000Z",
+      "fs_lua": 0.27,
+      "oc_temperatura": {
+        "qt_tempdia": 19.85,
+        "qt_tempmin": 11.16,
+        "qt_tempmax": 22.26,
+        "qt_tempnoite": 13.67,
+        "qt_tempvesp": 18.81
+      },
+      "oc_senstermica": {
+        "qt_tempdia": 20.01,
+        "qt_tempnoite": 13.55,
+        "qt_tempvesp": 19.25,
+        "qt_tempmanha": 10.8
+      },
+      "qt_pressao": 1014,
+      "qt_umidade": 81,
+      "qt_pontorvalho": 16.48,
+      "qt_nuvend": 7,
+      "vl_vento": 5.96,
+      "vl_rajvento": 15.76,
+      "an_vento": 12,
+      "oc_clima": [
+        {
+          "id_clima": 501,
+          "ds_climapredo": "Rain",
+          "ds_clima": "chuva moderada",
+          "cd_icone": "10d"
+        }
+      ],
+      "pe_probchuva": 100,
+      "qt_chuva": 7.37,
+      "qt_uv": 5.54
+    },
+    {
+      "nr_ordem": 4,
+      "dt_clima": "2026-06-23T15:00:00.000Z",
+      "ds_sumario": "There will be partly cloudy today",
+      "dt_nascersol": "2026-06-23T10:12:07.000Z",
+      "dt_porsol": "2026-06-23T20:51:06.000Z",
+      "dt_nascerlua": "2026-06-23T16:18:00.000Z",
+      "dt_porlua": "2026-06-23T04:37:00.000Z",
+      "fs_lua": 0.31,
+      "oc_temperatura": {
+        "qt_tempdia": 12.1,
+        "qt_tempmin": 8.62,
+        "qt_tempmax": 14.03,
+        "qt_tempnoite": 9.55,
+        "qt_tempvesp": 11.9
+      },
+      "oc_senstermica": {
+        "qt_tempdia": 11.12,
+        "qt_tempnoite": 7.58,
+        "qt_tempvesp": 10.84,
+        "qt_tempmanha": 7.39
+      },
+      "qt_pressao": 1019,
+      "qt_umidade": 67,
+      "qt_pontorvalho": 6.27,
+      "qt_nuvend": 100,
+      "vl_vento": 5.22,
+      "vl_rajvento": 10.4,
+      "an_vento": 196,
+      "oc_clima": [
+        {
+          "id_clima": 804,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "nublado",
+          "cd_icone": "04d"
+        }
+      ],
+      "pe_probchuva": 0,
+      "qt_uv": 2.85
+    },
+    {
+      "nr_ordem": 5,
+      "dt_clima": "2026-06-24T15:00:00.000Z",
+      "ds_sumario": "There will be partly cloudy today",
+      "dt_nascersol": "2026-06-24T10:12:17.000Z",
+      "dt_porsol": "2026-06-24T20:51:20.000Z",
+      "dt_nascerlua": "2026-06-24T16:51:00.000Z",
+      "dt_porlua": "2026-06-24T05:30:00.000Z",
+      "fs_lua": 0.34,
+      "oc_temperatura": {
+        "qt_tempdia": 13.61,
+        "qt_tempmin": 7.76,
+        "qt_tempmax": 14.54,
+        "qt_tempnoite": 9.91,
+        "qt_tempvesp": 10.68
+      },
+      "oc_senstermica": {
+        "qt_tempdia": 12.49,
+        "qt_tempnoite": 9.91,
+        "qt_tempvesp": 9.74,
+        "qt_tempmanha": 6.04
+      },
+      "qt_pressao": 1020,
+      "qt_umidade": 56,
+      "qt_pontorvalho": 4.88,
+      "qt_nuvend": 100,
+      "vl_vento": 3.3,
+      "vl_rajvento": 7.58,
+      "an_vento": 195,
+      "oc_clima": [
+        {
+          "id_clima": 804,
+          "ds_climapredo": "Clouds",
+          "ds_clima": "nublado",
+          "cd_icone": "04d"
+        }
+      ],
+      "pe_probchuva": 0,
+      "qt_uv": 1.14
+    },
+    {
+      "nr_ordem": 6,
+      "dt_clima": "2026-06-25T15:00:00.000Z",
+      "ds_sumario": "The day will start with partly cloudy through the late morning hours, transitioning to clearing",
+      "dt_nascersol": "2026-06-25T10:12:26.000Z",
+      "dt_porsol": "2026-06-25T20:51:35.000Z",
+      "dt_nascerlua": "2026-06-25T17:27:00.000Z",
+      "dt_porlua": "2026-06-25T06:24:00.000Z",
+      "fs_lua": 0.37,
+      "oc_temperatura": {
+        "qt_tempdia": 17.55,
+        "qt_tempmin": 7.75,
+        "qt_tempmax": 19.09,
+        "qt_tempnoite": 10.55,
+        "qt_tempvesp": 13.16
+      },
+      "oc_senstermica": {
+        "qt_tempdia": 17.03,
+        "qt_tempnoite": 9.57,
+        "qt_tempvesp": 12.72,
+        "qt_tempmanha": 6.71
+      },
+      "qt_pressao": 1023,
+      "qt_umidade": 64,
+      "qt_pontorvalho": 10.75,
+      "qt_nuvend": 1,
+      "vl_vento": 2.22,
+      "vl_rajvento": 3.24,
+      "an_vento": 132,
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ],
+      "pe_probchuva": 0,
+      "qt_uv": 2
+    },
+    {
+      "nr_ordem": 7,
+      "dt_clima": "2026-06-26T15:00:00.000Z",
+      "ds_sumario": "You can expect clear sky in the morning, with partly cloudy in the afternoon",
+      "dt_nascersol": "2026-06-26T10:12:34.000Z",
+      "dt_porsol": "2026-06-26T20:51:50.000Z",
+      "dt_nascerlua": "2026-06-26T18:08:00.000Z",
+      "dt_porlua": "2026-06-26T07:19:00.000Z",
+      "fs_lua": 0.4,
+      "oc_temperatura": {
+        "qt_tempdia": 17.85,
+        "qt_tempmin": 9.03,
+        "qt_tempmax": 19.25,
+        "qt_tempnoite": 15.44,
+        "qt_tempvesp": 16.59
+      },
+      "oc_senstermica": {
+        "qt_tempdia": 17.52,
+        "qt_tempnoite": 15.44,
+        "qt_tempvesp": 16.47,
+        "qt_tempmanha": 7.79
+      },
+      "qt_pressao": 1022,
+      "qt_umidade": 70,
+      "qt_pontorvalho": 12.46,
+      "qt_nuvend": 4,
+      "vl_vento": 3.75,
+      "vl_rajvento": 8.73,
+      "an_vento": 94,
+      "oc_clima": [
+        {
+          "id_clima": 800,
+          "ds_climapredo": "Clear",
+          "ds_clima": "céu limpo",
+          "cd_icone": "01d"
+        }
+      ],
+      "pe_probchuva": 0,
+      "qt_uv": 2
+    },
+    {
+      "nr_ordem": 8,
+      "dt_clima": "2026-06-27T15:00:00.000Z",
+      "ds_sumario": "There will be partly cloudy until morning, then rain",
+      "dt_nascersol": "2026-06-27T10:12:41.000Z",
+      "dt_porsol": "2026-06-27T20:52:07.000Z",
+      "dt_nascerlua": "2026-06-27T18:53:00.000Z",
+      "dt_porlua": "2026-06-27T08:14:00.000Z",
+      "fs_lua": 0.43,
+      "oc_temperatura": {
+        "qt_tempdia": 15.23,
+        "qt_tempmin": 13.77,
+        "qt_tempmax": 16.48,
+        "qt_tempnoite": 15.02,
+        "qt_tempvesp": 15.68
+      },
+      "oc_senstermica": {
+        "qt_tempdia": 15.37,
+        "qt_tempnoite": 15.16,
+        "qt_tempvesp": 15.89,
+        "qt_tempmanha": 13.76
+      },
+      "qt_pressao": 1022,
+      "qt_umidade": 98,
+      "qt_pontorvalho": 14.88,
+      "qt_nuvend": 100,
+      "vl_vento": 4.59,
+      "vl_rajvento": 8.45,
+      "an_vento": 87,
+      "oc_clima": [
+        {
+          "id_clima": 501,
+          "ds_climapredo": "Rain",
+          "ds_clima": "chuva moderada",
+          "cd_icone": "10d"
+        }
+      ],
+      "pe_probchuva": 100,
+      "qt_chuva": 11.52,
+      "qt_uv": 2
+    }
+  ],
+  "ls_alertas": [
+    {
+      "nm_orgao": "Instituto Nacional de Meteorologia",
+      "ds_evento": "Chuvas Intensas",
+      "dt_inicio": "2026-06-20T13:00:00.000Z",
+      "dt_fim": "2026-06-21T18:00:00.000Z",
+      "ds_alerta": "INMET publica aviso iniciando em: 20/06/2026 10:00. Chuva entre 20 e 30 mm/h ou até 50 mm/dia, ventos intensos (40-60 km/h). Baixo risco de corte de energia elétrica, queda de galhos de árvores, alagamentos e de descargas elétricas.",
+      "ls_tag": ["Rain"]
+    }
+  ]
+}

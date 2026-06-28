@@ -10,6 +10,7 @@ dotenv.config();
 // const srcPath = './src'
 const rootPathV1 = './src/v1'
 const rootPathV2 = './src/v2'
+const rootPathV3 = './src/v3'
 
 // https://vite.dev/config/
 export default defineConfig({

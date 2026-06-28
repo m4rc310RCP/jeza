@@ -1,3 +1,4 @@
+import weatherRef from "./weather.json";
 export {};
 declare global {
   interface ILayoutProps {
@@ -13,6 +14,7 @@ declare global {
     authProps: {
       isSaveLastDocument: boolean;
       isMenuPrincipalMini: boolean;
+      showDashboardValue: boolean;
     };
   }
 
@@ -47,6 +49,7 @@ declare global {
     | "none"
     | "payments"
     | "test"
+    | "experiments"
     | "finantials_movements"
     | "deliveries";
 
@@ -62,16 +65,16 @@ declare global {
     loading?: boolean;
   };
 
-	interface IIconControl{
-		makeIcon: (id: TTabView) => ReactNode;
-	}
+  interface IIconControl {
+    makeIcon: (id: TTabView) => ReactNode;
+  }
 
-	interface ITabControl {
-		createTab: (tab:TTab) => void;
-		closeTab: (e: React.MouseEvent<HTMLButtonElement>, id: string) => void;
-		makeIcon: IIconControl['makeIcon'];
-		rendererTab: (tab:TTab) => ReactNode
-	}
+  interface ITabControl {
+    createTab: (tab: TTab) => void;
+    closeTab: (e: React.MouseEvent<HTMLButtonElement>, id: string) => void;
+    makeIcon: IIconControl["makeIcon"];
+    rendererTab: (tab: TTab) => ReactNode;
+  }
 
   interface ISideControl {
     isOpen: boolean;
@@ -96,6 +99,11 @@ declare global {
     in_versenha: boolean;
     in_docvalido: boolean;
     in_gravar: boolean;
+  }
+
+  interface IUserBalance {
+    qt_entregas: number;
+    vl_saldo: number;
   }
 
   interface IUser {
@@ -132,7 +140,12 @@ declare global {
     };
   }
 
-  // HTTP
+  interface IWeatherReq {
+    nr_latitude: number;
+    nr_longitude: number;
+    tp_clima: "ALL" | "CURRENT" | "MINUTELY" | "HOURLY" | "DAILY" | "ALERTS";
+  }
+  // HTTP ------------
   type TMethod = "GET" | "POST" | "PUT" | "DELETE";
   // type TRequestCredentials = RequestCredentials;
 
@@ -142,12 +155,16 @@ declare global {
     response: Res;
   }
 
+  type TWeather = typeof weatherRef;
+
   interface IApiRoutes {
     "/api/local": IRouteRef<
       "POST",
       { nm_local: string },
       { id_local: string; nm_local: string }[]
     >;
+
+    "/jeza/user/refresh/balances": IRouteRef<"POST", undefined, IUserBalance>;
 
     "/jeza/login": IRouteRef<
       "POST",
@@ -165,6 +182,9 @@ declare global {
 
     "/jeza/user": IRouteRef<"POST", undefined, IUserAuth>;
     "/jeza/app/register": IRouteRef<"POST", IDeviceRegister, undefined>;
+
+    "/weather/geo": IRouteRef<"POST", IWeatherReq, TWeather>;
+
     // "/mp/pix": IRouteRef<"POST", IPayPix["request"], IPayPix["response"]>;
   }
 
@@ -214,10 +234,15 @@ declare global {
     //--~> Function's
     handleLogin: (document: string, password: string) => void;
     handleLogout: () => void;
+		handleOpenWeatherTab: () => void;
     // Function's <~--
     //--~> Loader's
     userAuth: IAwaitValue<IUserAuth>;
     // Loader's <~--
+    userBalance: IAwaitValue<IUserBalance>;
+    currentWeather: IAwaitValue<
+      TWeather["oc_geo"] & TWeather["oc_atual"] & { dt_atualizacao: Date }
+    >;
   }
   //------------
 }
